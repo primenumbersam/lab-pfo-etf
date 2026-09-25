@@ -1,0 +1,634 @@
+{
+  "7twelve-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.13
+      },
+      {
+        "element": "United States Small Cap Blend Stocks",
+        "weight": 0.12
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.08
+      },
+      {
+        "element": "Emerging Markets Large Cap Blend Stocks",
+        "weight": 0.08
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.17
+      },
+      {
+        "element": "United States Treasury Bills",
+        "weight": 0.09
+      },
+      {
+        "element": "Developed ex-US Intermediate Term Treasury Bonds",
+        "weight": 0.08
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.08
+      },
+      {
+        "element": "Global Commodities",
+        "weight": 0.17
+      }
+    ],
+    "asset_notes": "1. Israelsen specifically recommends equal parts large cap blend, mid cap blend, and small cap blend. The data here simplifies that to half large caps and half small caps. Because most large cap index funds include mid caps and many small cap funds also have more mid caps than you might expect, the results should be very similar. But if you want to follow his recommendation to the letter, you might consider looking for a separate mid-cap fund.\n\n\n\n2. Israelsen specifically recommends equal parts nominal bonds and TIPS.  Since I don’t have specific data for TIPS, I allocated this portion to intermediate term bonds.  While this is a pretty good proxy that should model the design intent reasonably well, be sure to read Israelsen’s justifications for why he chooses the bonds he does.\n\n\n\n3. He specifically recommends 8.3% commodities and 8.3% natural resources, but good data for natural resources is not available.  Keeping with his theme of having two equal segments in the “resources” category, I allocated the natural resources to the commodities portion.  There’s a decent amount of overlap in commodities and natural resources ETFs, so I anticipate this will not change the results all that much.\n\n\n\n4. The Portfolio Charts tools use round numbers, so I reallocated the portfolio slightly while preserving the original design intent as closely as possible.",
+    "author": "Craig L. Israelsen, Ph.D., is an Executive-in-Residence in the Financial Planning Program at Utah Valley University. He talks about the 7Twelve Portfolio in his book 7Twelve: A Diversified Investment Portfolio with a Plan.",
+    "overview": "In contrast to the old-school definition of diversification in terms of company count, the 7Twelve Portfolio seeks to enhance performance and reduce risk by diversifying among a wide variety of different asset types. The name is derived from the 12 different funds in the portfolio spread across 7 different asset classes.\n\nUS Stock (large, mid, and small caps)\n\n\n\nNon-US Stock (developed, emerging)\n\n\n\nReal Estate\n\n\n\nResources (natural resources, commodities)\n\n\n\nUS Bonds (nominal, TIPS)\n\n\n\nNon-US Bonds\n\n\n\nCash\n\nIsraelsen describes the thought process of mixing asset types as similar to making salsa, where individual ingredients may seem bland or way too spicy on their own but are all critical to the success of the recipe. The 7Twelve Portfolio assets are weighted in equal proportions, and he classifies it as a “core” portfolio that should be built around rather than tweaked. For example, his age based models all equally weight the same assets where the only difference is the percentage of cash that can be increased to reduce risk for older investors."
+  },
+  "all-seasons-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.3
+      },
+      {
+        "element": "United States Long Term Treasury Bonds",
+        "weight": 0.4
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.15
+      },
+      {
+        "element": "Global Gold",
+        "weight": 0.08
+      },
+      {
+        "element": "Global Commodities",
+        "weight": 0.07
+      }
+    ],
+    "asset_notes": "The Portfolio Charts tools use round numbers, so I reallocated the portfolio slightly while preserving the original design intent as closely as possible.",
+    "author": "Ray Dalio is the founder and chief investment officer of the world’s largest hedge fund, Bridgewater Associates. You can read about his thoughts on the All Seasons Portfolio in the Tony Robbins book MONEY Master the Game.",
+    "overview": "The All Seasons Portfolio is built on the philosophical foundation of Dalio’s All Weather Fund, a popular hedge fund among institutional investors. According the All Weather Story, the original goal of the fund was to answer a deceptively simple question:\n\nWhat kind of investment portfolio would you hold that would perform well across all environments, be it a devaluation or something completely different?\n\nDalio and his Bridgewater team concluded that while individual assets are unpredictable, they react in understandable ways based on cash flows in the prevailing economic environment. They arranged those environments into four quadrants:\n\nBy filling each quadrant with assets that respond to each economic condition and balancing the asset weights to achieve risk parity for each situation, Dalio designed a portfolio capable of succeeding no matter what happens in the markets.\n\nWhile the institutional All Weather fund includes a lot of active management and a number of investments not available to everyday investors, the All Seasons portfolio is a simplified version that he recommends to individuals looking to build an autopilot portfolio using the same All Weather philosophy."
+  },
+  "classic-60-40-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.6
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.4
+      }
+    ],
+    "asset_notes": "",
+    "author": "John Bogle was the founder of Vanguard, the creator of the first index fund, and a true pioneer of index investing. You can read his thoughts on the Classic 60-40 portfolio in his book The Little Book of Common Sense Investing.",
+    "overview": "As the godfather of index investing, John Bogle spoke eloquently about the importance of avoiding market timing, diversifying your portfolio, minimizing fees, and staying the course. At a time when common investing advice involved individual stock picking, he went a different direction and not only promoted buying the entire market but also created the first index funds that made it possible for people to do so. The Classic 60-40 portfolio is his default asset allocation suggestion for pretty much every investor, and has been a staple of portfolio discussions ever since.\n\nThe Classic 60-40 consists of two funds — a simple stock market fund and an intermediate bond fund. The stocks are intended to drive returns, while the bonds are selected to reduce volatility and smooth out the ride. Bogle suggests that the percentage of stocks can be varied by the age of the investor, with young investors holding up to 80% and retirees holding as few as 50%. But he’s also a big fan of keeping it simple, and suggests that sticking with a 60-40 portfolio for life is really all you need.\n\nOne interesting note about the Classic 60-40 is that Bogle was never a fan of international markets because he believed that “the US is the most productive country in the world”. In fact, he chose to invest only in US funds with his own money. So while the concept can also be applied to other markets, it might rightfully be considered a US-centric portfolio philosophy."
+  },
+  "coffeehouse-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "United States Large Cap Value Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "United States Small Cap Blend Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.4
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.1
+      }
+    ],
+    "asset_notes": "",
+    "author": "Bill Schultheis is a Wall Street veteran and a financial adviser at Soundmark Wealth Management. He talks about the Coffeehouse Portfolio in his book The Coffeehouse Investor.",
+    "overview": "The Coffeehouse Portfolio straddles an interesting line between promoting a conservative Classic 60-40 mindset while mixing in a more aggressive slice and dice approach to factor investing. Its author Bill Schultheis believes that the most important concepts in investing are actually not so much about specific asset choices but about three key principles:\n\nDon’t put all your eggs in one basket\n\n\n\nThere’s no such thing as a free lunch\n\n\n\nSave for a rainy day\n\nIn fact, in his unique humble style Schultheis underplays the specific asset allocation on his Coffeehouse Investor blog. He once explained that his initial portfolio recommendation was intended to be just one example of a Coffeehouse-style portfolio, but that his suggestion soon took on a life of its own. As he described it:\n\nDespite its enduring popularity, the portfolio benefit isn’t found in its specific construction nor its 20-year returns. It’s found in investors “capturing their fair share of market returns” over time, as Mr. Bogle was fond of saying.\n\nSo one could argue that the Coffeehouse Portfolio might best be described as a mindset rather than a single specific asset allocation. Still, I think Schultheis perhaps sells himself a little short in his recommended portfolio. Even if it was just one example, I find a lot of wisdom in his work and believe his instincts are absolutely worth further study."
+  },
+  "core-four-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.48
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.24
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.08
+      }
+    ],
+    "asset_notes": "",
+    "author": "Rick Ferri is a financial adviser and investing author. You can read about the Core Four portfolio at Core-4.com, and learn about his investing philosophy in his book All About Asset Allocation.",
+    "overview": "Rick Ferri has long been a vocal champion of low-cost DIY investing, and the Core Four Portfolio represents his best advice for people who want to escape high fees and complex asset allocations. In his own words:\n\nSimple investing is a virtue – the ultimate in portfolio sophistication. A few low-cost, broadly diversified index funds or ETFs held in a portfolio will beat complex strategies almost every time. Why waste your time and money on complexity? Be simple and be rewarded.\n\nThe four assets in the Core Four are selected based on the following characteristics:\n\nAll have an economic purpose that is fundamentally different from each other.\n\n\n\nAll produce regular cash-flow from interest, dividends or rents.\n\n\n\nThe historic correlations between asset classes have resulted in a diversification benefit.\n\n\n\nAll asset classes can be purchased using a very-low cost index fund or ETF.\n\nA notable part of Ferri’s philosophy is evident in the juxtaposition of points 2 and 3. While some portfolios select assets primarily for how they affect overall performance as a group, Ferri believes that they should also stand on their own with regular cash-flow.\n\nThe Core Four Portfolio does a nice job of distilling several similar portfolios down to their simplest form, and is a good choice for investors seeking a solid financial foundation with low fees and minimum complexity."
+  },
+  "global-market-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "Developed World Large Cap Blend Stocks",
+        "weight": 0.38
+      },
+      {
+        "element": "Developed World Small Cap Blend Stocks",
+        "weight": 0.07
+      },
+      {
+        "element": "Emerging Markets Large Cap Blend Stocks",
+        "weight": 0.05
+      },
+      {
+        "element": "Developed World Intermediate Term Treasury Bonds",
+        "weight": 0.44
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.04
+      },
+      {
+        "element": "Global Gold",
+        "weight": 0.02
+      }
+    ],
+    "asset_notes": "The truly free-floating Global Market Portfolio naturally shifts percentages of stocks, bonds, and other real assets every year, which makes it tricky to measure historical results and fairly compare the underlying risk to other portfolios. The percentages shown here represent the average portfolio composition since 1970, and the portfolio is rebalanced back to that average annually.\n\n\n\n1. Allocating 10% of the stock portion (5% of the portfolio) to emerging markets is a little high in terms of historical averages, as easily investible EM stocks really didn’t become widespread until the 1990s. But since the percentage has leveled out and EM stocks are here to stay, it seems reasonable to allocate a representative portion of the portfolio to emerging markets.\n\n\n\n2. The global market research specifically splits out separate categories for government bonds and other things like corporate, inflation-linked, and emerging market debt. I don’t have good data for every bond type, so I allocated them to government bonds of a similar average maturity. In my experience this is still a reasonable approximation for general study.\n\n\n\n3. If you read the research, the 2% allocation is most commonly referred to as “commodities”. But dig deeper into the details, and the total invested commodities market studied has an average index weight of about 88% gold. So for both simplicity and accuracy, I allocated the full portion to gold rather than a much more diversified commodities index.\n\n\n\n4. The paper calls for Developed World stocks. Since the explicit goal is to model the entire market, for the purposes of backtesting I split that into 85% Dev. Wld. large caps and 15% Dev. Wld small caps to properly model the returns using my data. But when building your own portfolio, a single all-cap Developed World fund should work the same.",
+    "author": "The Global Market Portfolio comes from academic research co-written by the trio of Ronald Doeswijk, Trevin Lam, and Laurens Swinkels. You can read about it in their paper Historical Returns of the Market Portfolio.",
+    "overview": "Lots of index investors talk about the benefits of owning the whole market rather than picking and choosing investments. But if you peel back myopic index definitions and truly look at the big picture, what is the market? The Global Market Portfolio answers that question by following the true cap-weighted global market for all possible investments.\n\nSeveral people have written about the Global Market Portfolio, but the underlying research almost invariably traces back to a set of academic papers by the trio of Ronald Doeswijk, Trevin Lam, and Laurens Swinkels who did the real legwork to gather the insane amount of data required to describe the total market as a whole. While they cover the bases in extreme detail, the fascinating thing from a portfolio perspective is that the Global Market Portfolio can be easily approximated with only 5 simple index funds. So even with the broadest-possible market coverage that may seem impossibly complex on the surface, investing in the whole world is easily attainable with minimum effort even for DIY index investors."
+  },
+  "golden-butterfly-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Long Term Treasury Bonds",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Short Term Treasury Bonds",
+        "weight": 0.2
+      },
+      {
+        "element": "Global Gold",
+        "weight": 0.2
+      }
+    ],
+    "asset_notes": "",
+    "author": "I’m a mechanical engineer, investing researcher, spreadsheet aficionado, and the author of Portfolio Charts. The Golden Butterfly is a portfolio idea born of my ongoing exploration.",
+    "overview": "The Golden Butterfly Portfolio is built on the idea of economic risk parity, similar to the Permanent Portfolio which shares four of its five assets. But while the Permanent Portfolio equally balances prosperity, recession, inflation, and deflation, the Golden Butterfly tilts the assets towards prosperity with an additional allocation to small cap value.\n\nWhile to some that may seem like a trendy choice destined to underperform, the data reveals a remarkable truth. The Golden Butterfly is one of the best risk-adjusted portfolios out there, pairing the famous consistency of the Permanent Portfolio and the growth rates of far more aggressive options. With a tight band of growth paths that are helpful for future estimates and notably high withdrawal rates that are great for retirees, it’s a particularly dependable portfolio option suitable for both accumulators and retirees alike."
+  },
+  "golden-ratio-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Growth Stocks",
+        "weight": 0.21
+      },
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.21
+      },
+      {
+        "element": "United States Long Term Treasury Bonds",
+        "weight": 0.26
+      },
+      {
+        "element": "United States Treasury Bills",
+        "weight": 0.06
+      },
+      {
+        "element": "Global Gold",
+        "weight": 0.16
+      },
+      {
+        "element": "Global Commodities",
+        "weight": 0.1
+      }
+    ],
+    "asset_notes": "Frank specifically calls for 10% managed futures. I don’t have data for that asset, so I allocated it to commodities (which tracks an index of commodities futures). That at least covers a portion of many managed futures funds and is similarly uncorrelated to both stocks and bonds.\n\n\n\n\nManaged futures are complex instruments with lots of moving parts, and this is admittedly not an ideal match. So be aware that there may be significant tracking error with this portion of the portfolio in the Portfolio Charts numbers.\n\n\n\nFor another asset option consistent with past iterations of the Golden Ratio Portfolio, you might also consider REITs. That’s what Frank allocated to the 10% slot before switching the default recommendation to managed futures.",
+    "author": "Frank Vasquez holds degrees in economics, engineering, and law while applying them all in the financial independence community. You can learn about his investing ideas on his podcast Risk Parity Radio. Frank encourages fans to show their support by donating to his favorite local charity, the Father McKenna Center.",
+    "overview": "The Golden Ratio Portfolio is named after an ancient mathematical fascination with the specific ratio 1.618 that appears often in nature and has long been associated with elegance and beauty. The portfolio percentages thus flow down from the largest 42% stock allocation to the smallest 6% following the golden ratio at each step along the way.\n\nWhile the structure of the portfolio reflects the depth of Frank Vasquez’s knowledge in the history of art and science, the economic concepts are strictly contemporary. Frank is an accomplished portfolio voice in his own right with a particular skill in explaining risk parity concepts to normal people.\n\nWithin the golden ratio framework, each asset is positioned into the right spot to balance the portfolio as a whole. With specific allocations to both growth and value stocks and also a sizable allocation to alternatives like commodities and gold, it utilizes modern investing concepts in classic percentages to survive and thrive in any market condition."
+  },
+  "ideal-index-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Value Stocks",
+        "weight": 0.09
+      },
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.09
+      },
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.07
+      },
+      {
+        "element": "United States Small Cap Growth Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.31
+      },
+      {
+        "element": "United States Short Term Treasury Bonds",
+        "weight": 0.3
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.08
+      }
+    ],
+    "asset_notes": "The Portfolio Charts tools use round numbers, so I reallocated the portfolio slightly while preserving the original design intent as closely as possible.",
+    "author": "Frank Armstrong is a financial adviser and the founder of Investor Solutions. He writes about the Ideal Index Portfolio in the book The Informed Investor.",
+    "overview": "A true student of financial theory, Armstrong presents the Ideal Index Portfolio as a well-considered way to use modern portfolio theory to improve investing outcomes. By demonstrating how smart asset choices can create a portfolio that both increases returns and reduced risk relative to more traditional options, he offers an intelligent and data-backed proposal suitable for any investor.\n\nOne of the most notable features of the Ideal Index portfolio is its inclusion of small cap growth stocks in the allocation. Combined with a healthy value tilt and a strong international flavor, it’s a good portfolio choice for investors less married to large cap US stocks and more interested in casting a wider net for portfolio returns."
+  },
+  "ivy-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.2
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.2
+      },
+      {
+        "element": "Global Commodities",
+        "weight": 0.2
+      }
+    ],
+    "asset_notes": "",
+    "author": "Meb Faber is the co-founder and Chief Investment Officer of Cambria Investment Management. He talks about the Ivy Portfolio the book The Ivy Portfolio by Faber and Eric Richardson.",
+    "overview": "The Ivy Portfolio originates from the idea of studying the investing styles of the largest and most successful college endowments. While not every institutional investment is available to individuals like you and me, many of the core principles can be closely mirrored relatively easily with just a few core index funds.\n\nThe most notable feature of the Ivy Portfolio is a relatively large allocation to real assets, reflective of the investing choices of many endowments that diverge a bit from conventional wisdom. By equally weighting very different types of assets, it’s a good example of a more tactical investing mindset that seeks returns under every stone rather than holding tight to old allocation paradigms.\n\nIn professional investing circles, Meb Faber is perhaps best known for his famous work on Tactical Asset Allocation using momentum trading strategies. So it’s only natural that in the book he also discusses using momentum to trade in and out of Ivy assets depending on market trends. The charts here only track the passive buy and hold version of the Ivy Portfolio just like all of the other options, but if you’re interested in Faber’s full ideas I encourage you to read his work."
+  },
+  "larry-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.15
+      },
+      {
+        "element": "Developed ex-US Small Cap Value Stocks",
+        "weight": 0.08
+      },
+      {
+        "element": "Emerging Markets Large Cap Blend Stocks",
+        "weight": 0.07
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.7
+      }
+    ],
+    "asset_notes": "Swedroe specifically recommends emerging market value.  I don’t have data for this asset, so allocated the portion to emerging markets.  I anticipate the numbers to be reasonably close, but be sure to read Swedroe’s reasoning for why he chooses the fund he does.\n\n\n\n\nThe Portfolio Charts tools use round numbers, so I reallocated the portfolio slightly while preserving the original design intent as closely as possible.",
+    "author": "Larry Swedroe is a financial author and the Chief Research Officer at Buckingham Strategic Wealth. You can read about the Larry Portfolio in the book Reducing The Risk of Black Swans by Swedroe and Kevin Grogan.",
+    "overview": "Larry Swedroe is one of the more prolific financial authors out there today, and if I had to pick the two topics where he carries the most weight they would be factor investing and risk management. The Larry Portfolio combines those two specialties into a single portfolio that simultaneously increases returns and reduces risk. It accomplishes those goals with very deliberate asset choices built into an intelligent risk management framework.\n\nThe Larry Portfolio is discussed in Swedroe’s book Reducing The Risk of Black Swans, which is an educational treatise on how to avoid unexpected catastrophic losses. The basic idea is to mix small percentages of assets with the highest expected returns (but also the highest uncertainty) with large percentages of stable bonds to protect yourself even if the risky assets totally tank. That idea of adjusting asset percentages inversely proportional to their volatility is called “risk parity”. And the Larry Portfolio is a prime example of that sophisticated financial concept distilled into a simple portfolio that anyone can build for themselves."
+  },
+  "no-brainer-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.25
+      },
+      {
+        "element": "United States Small Cap Blend Stocks",
+        "weight": 0.25
+      },
+      {
+        "element": "Developed ex-US Small Cap Blend Stocks",
+        "weight": 0.25
+      },
+      {
+        "element": "United States Short Term Treasury Bonds",
+        "weight": 0.25
+      }
+    ],
+    "asset_notes": "",
+    "author": "William Bernstein is a neurologist and financial author who writes prolifically on asset allocation. You can read his thoughts on the No-Brainer Portfolio in his book The Intelligent Asset Allocator.",
+    "overview": "The No-Brainer Portfolio, also sometimes called the Simpleton’s Portfolio, is an interesting study in asset allocation. Bernstein is a self-described “asset junkie” who enjoys discussing all types of increasingly sophisticated portfolios custom designed for unique investor needs and fine-tuned with advanced concepts like efficient frontiers. While the No-Brainer Portfolio is just the simplest introductory idea in The Intelligent Asset Allocator, I also think it uniquely expresses some of his most fundamental insights.\n\nBernstein tends to talk about his ideas self-deprecatingly in terms of naive but effective diversification, but the thing I find most interesting is how the No-Brainer Portfolio tackles three different types of diversification in the most efficient way possible. By adding small cap stocks, international stocks, and short term bonds to a traditional large cap stock fund, it demonstrates how easy it is to construct a well-considered asset allocation that doesn’t depend so much on the handful of large cap companies that tend to dominate stock returns. For a lot of people looking for maximum diversification with minimum effort, that really is a no-brainer."
+  },
+  "permanent-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.25
+      },
+      {
+        "element": "United States Long Term Treasury Bonds",
+        "weight": 0.25
+      },
+      {
+        "element": "United States Treasury Bills",
+        "weight": 0.25
+      },
+      {
+        "element": "Global Gold",
+        "weight": 0.25
+      }
+    ],
+    "asset_notes": "",
+    "author": "Author, politician, and investment adviser. An advocate for free markets and free people, Harry Browne was the Libertarian presidential nominee in 1996 and 2000. He talks about the Permanent Portfolio in his book Fail-Safe Investing.",
+    "overview": "The Permanent Portfolio is built on the idea that while the future is unknowable, the economy fluctuates between a few known states — prosperity, recession, inflation, and deflation. While some portfolio managers apply the idea of “risk parity” to balance the volatility risk between assets, Harry Browne believed in using the same idea to balance economic risk. So he chose four assets that he saw as uniquely qualified to respond positively in each of the four economic conditions.\n\nProsperity: stocksRecession: cashInflation: goldDeflation: long term treasuries\n\nBrown equally weighted the four assets to protect and grow his money no matter what happens in the market. And the resulting portfolio has proven to be one of the most consistent on record with dependable returns, low drawdowns, and high withdrawal rates.\n\nIn addition to Browne’s own writings, An excellent modern guide is The Permanent Portfolio: Harry Browne’s Long-Term Investment Strategy by Craig Rowland and J. M. Lawson."
+  },
+  "pinwheel-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.15
+      },
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.15
+      },
+      {
+        "element": "Emerging Markets Large Cap Blend Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.15
+      },
+      {
+        "element": "United States Treasury Bills",
+        "weight": 0.1
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.15
+      },
+      {
+        "element": "Global Gold",
+        "weight": 0.1
+      }
+    ],
+    "asset_notes": "",
+    "author": "I’m a mechanical engineer, investing researcher, spreadsheet aficionado, and the author of Portfolio Charts. The Pinwheel Portfolio is a portfolio idea born of my ongoing exploration.",
+    "overview": "Browse enough portfolios and you’ll start to notice a pattern where a large number of financial professionals all recommend the same common assets — domestic stocks, international stocks, intermediate bonds, and real estate. The Pinwheel Portfolio adopts each of those four assets in equal weights, and adds one complementary asset of each type to boost returns and minimize risk.\n\nDomestic Stocks > Small Cap Value\n\n\n\nInternational Stocks > Emerging Markets\n\n\n\nIntermediate Bonds > Cash\n\n\n\nReal Estate > Gold\n\nThe end result is a uniquely balanced portfolio with an intelligently modern twist on a traditional 4-asset foundation. Featuring high returns and healthy withdrawal rates, it’s a good portfolio choice for both accumulators and retirees. And it’s also an easy evolution for many investors looking to add new assets to the ones they already own."
+  },
+  "richer-retirement-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.22
+      },
+      {
+        "element": "United States Small Cap Blend Stocks",
+        "weight": 0.22
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.11
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.4
+      },
+      {
+        "element": "United States Treasury Bills",
+        "weight": 0.05
+      }
+    ],
+    "asset_notes": "1. Bengen specifically recommends 11% large cap blend and 11% mid cap blend. Since I don’t have data for mid caps, I grouped them into the large cap allocation. Note that most large cap funds already cover mid caps.\n\n\n\n2. Bengen specifically recommends 11% small cap blend and 11% micro caps. Since I don’t have data for micro caps, I grouped them into the small cap allocation.",
+    "author": "Bill Bengen is an MIT-educated financial advisor most well-known for quantifying the original 4% rule for retirement. You can read about the Richer Retirement Portfolio in the book A Richer Retirement: Supercharging the 4% Rule to Spend More and Enjoy More.",
+    "overview": "As the original creator of the ubiquitous “4% rule” for retirement that so many investors today take for granted, Bill Bengen has always been in a strange position. On the one hand, his ability to convince an entire generation of retirement planners that effective backtesting is highly important must surely be a pride point. But on the other, Bill has always been refreshingly candid about the limits of his assumptions. And even he will tell you that there’s more to retirement planning than just building your life around a single number without looking deeper.\n\nThe Richer Retirement portfolio is named after the book in which he aims to expand upon his classic retirement insights. A Richer Retirement: Supercharging the 4% Rule to Spend More and Enjoy More is more than just a treatise on the benefits of expanding his analysis to assets not before considered. It’s a full guide to withdrawal strategies, tax management, and planning in general with the ultimate goal of putting your money to the best use possible to empower a better life.\n\nWhile the original 4% rule was based on data from US stocks and intermediate term bonds, the Richer Retirement portfolio not only expands the playing field to various sizes of stocks but also looks beyond US shores to the benefits of international investing. By taking the Classic 60-40 framework and simply subdividing the stock portion to multiple modern options while adding a dash of practical cash, the benefits to safe withdrawal rates are unmistakable. It’s a great new addition to a solid investing foundation for any retiree.\n\nBengen fans may notice that the asset allocation listed here is a little simpler than the one outlined in his book. He advocates for equal parts large, mid, small, and micro caps, while I simplified it to equal parts large and small caps to match my available data. You can see in the Withdrawal Rates chart that the 4.8% 30-year SWR is virtually identical to the 4.7% SWR he calculated for his specific recommendation. So no matter which version you choose, you should be in the same ballpark."
+  },
+  "sandwich-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Small Cap Blend Stocks",
+        "weight": 0.08
+      },
+      {
+        "element": "Developed ex-US Small Cap Blend Stocks",
+        "weight": 0.1
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "Emerging Markets Large Cap Blend Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.3
+      },
+      {
+        "element": "United States Treasury Bills",
+        "weight": 0.04
+      },
+      {
+        "element": "Developed ex-US Intermediate Term Treasury Bonds",
+        "weight": 0.11
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.05
+      }
+    ],
+    "asset_notes": "1. Clyatt recommends a specific Vanguard international small cap growth fund that was the only international small option available at the time the book was published. Keeping with the spirit of his overall philosophy, I allocated this portion to international small cap blend.",
+    "author": "Bob Clyatt is an economics major and business professional who semi-retired at 42 to become an accomplished sculptor. He talks about the Sandwich Portfolio at his website  Work Less, Live More.",
+    "overview": "The Sandwich Portfolio is based on the sophisticated market insights of Bob Clyatt, a successful business professional who earned degrees in finance and economics at Berkeley and MIT. While Clyatt’s full Rational Investing Portfolio includes lots of assets regularly accessible only to institutional investors, he describes the Sandwich Portfolio as a simplified version suitable for everyday investors. With small cap tilts, international diversification in stocks as well as bonds, an overall balanced allocation in terms of risk, and even a practical slice of cash, the Sandwich Portfolio is a thoughtful portfolio built to last.\n\nThat practical mindset is no accident. The Sandwich Portfolio is more than just an asset allocation by a stuffy economist in a tie. In fact, Clyatt left the rat race at 42 and is best known today as an award-winning artist. So his ideas are more than purely academic, and his proposed portfolio is just one component of a larger strategy with a greater purpose — to escape the work treadmill that keeps you down and empower you to pursue life on your own terms."
+  },
+  "swensen-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.3
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.15
+      },
+      {
+        "element": "Emerging Markets Large Cap Blend Stocks",
+        "weight": 0.05
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.3
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.2
+      }
+    ],
+    "asset_notes": "1. Swensen specifically calls for 15% TIPS as part of the bond portion of the portfolio.  I don’t have good data for that asset, so I added it to the overall IT bond allocation.  Be sure to read Swensen’s explanation for why he chooses the assets he does.",
+    "author": "David Swensen was the famed Chief Investment Officer at Yale who led their endowment for more than three decades. He talks about the Swensen Portfolio in his book Unconventional Success.",
+    "overview": "David Swensen is most famous for his role as Chief Investment Officer of the Yale Endowment, one of the largest endowments in the world famous for its sustained superior returns. But since the Yale Endowment manages billions of dollars and invests in all kinds of exotic assets only available to large institutions, its methods are not that attainable by your average retail investor. Swensen sought to correct that shortcoming, however, and the Swensen Portfolio is his personal investing recommendation to people like you and me.\n\nSwensen’s philosophy goes far beyond simple asset allocation. True to his principles that are sadly all too rare among big-time investors, his book Unconventional Success makes a compelling case for individuals to take control of their investments from the financial industry that does not have their best interests in mind.\n\nOne of the notable features of the Swensen Portfolio is a sizable allocation to REITs that reflect a common endowment strategy not always embraced by mainstream asset allocators. The balance between stocks, bonds, and real assets is an important part of what makes it tick, and the Swensen Portfolio serves as an educational window into the inner workings of some of the most successful funds that are responsible not for fleeting returns but for decades of sustainable growth and income. It may especially appeal to investors like early retirees who share similar goals."
+  },
+  "three-fund-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.64
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.16
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.2
+      }
+    ],
+    "asset_notes": "1. Larimore specifically recommends international stocks equal to 20% of the equity portion of the portfolio. Since the default version here on Portfolio Charts includes 80% stocks, I allocated 16% (20% of 80) to international.",
+    "author": "Taylor Larimore is a finance veteran, author, and long-time poster at the Bogleheads forums. You can read about the Three-Fund Portfolio in his book The Bogleheads’ Guide to the Three-Fund Portfolio.",
+    "overview": "The Three-Fund Portfolio was created by Taylor Larimore after being inspired by the writings of Jack Bogle to simplify the investments from his own complex mix of 16 different funds to something much more sustainable. The original version back in 1999 actually included four funds — domestic stocks, international stocks, bonds, and cash. But as interest rates dropped over the years Larimore simplified even further, and the Three-Fund Portfolio took its final form.\n\nWhile the percentages cited on Portfolio Charts represent Larimore’s suggestion for a reasonable starting point for study, he doesn’t actually see it as a single fixed asset allocation. Instead, he recommends adjusting the percentage of bonds according to your age, goals, timeframe, and risk tolerance. Those factors may naturally change over time, and the Three-Fund Portfolio can change right along with them. So it’s more than just an asset allocation — it’s a portfolio meant to grow right alongside the investor for life."
+  },
+  "total-stock-market-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 1
+      }
+    ],
+    "asset_notes": "Many people promoting the Total Stock Market portfolio recommend an all-cap fund like VTI or VTSAX. To keep the data apples to apples across different markets, I used large cap blend which (by definition) compromises 85% of the market. You can model funds like VTI using 85% LCB and 15% SCB in the tools, but you may notice that the results are very similar.",
+    "author": "The Total Stock Market Portfolio is really more of a benchmark than something attributable to a single author. But for a compelling explanation, read the work of JL Collins in his book The Simple Path to Wealth.",
+    "overview": "In contrast to the common advice to never put all of your eggs in one basket, the Total Stock Market portfolio does just the opposite. Buy a single total market stock fund and for the most part just ignore it. It doesn’t get much simpler than that!\n\nWhile hardcore asset allocation fans may think that sounds way too simplistic, there’s a lot of merit to the idea that young investors are best served by spending less time on fine tuning their portfolios and more time on earning and saving. The most articulate advocate for this line of thinking today is perhaps JL Collins. Here’s what he has to say about the idea of putting everything in a total market fund and calling it a day:\n\nOwning 100% stocks like this is considered “very aggressive.”  It is and you should be.  You have decades ahead.  Market ups and downs don’t matter ‘cause you avoid panic and stay the course.  If anything, you recognize them as the “stocks on sale” buying opportunities they are.  Perhaps 40 years from now you might want to add a Bond Index Fund to smooth out the ups and downs.  Worry about that 40 years from now.\n\nCollins has a substantial following in the FIRE community, and the Total Stock Market Portfolio (which he refers to as the Wealth Building Portfolio) is a staple among aggressive young investors looking to race to financial independence. It’s a good choice for people who want to truly keep it simple and who are willing and able to power through the inevitable drawdowns that come with a volatile asset allocation."
+  },
+  "ultimate-buy-and-hold-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Large Cap Blend Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "United States Large Cap Value Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "United States Small Cap Blend Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "Developed ex-US Large Cap Blend Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "Developed ex-US Large Cap Value Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "Developed ex-US Small Cap Blend Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "Developed ex-US Small Cap Value Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "Emerging Markets Large Cap Blend Stocks",
+        "weight": 0.06
+      },
+      {
+        "element": "United States Intermediate Term Treasury Bonds",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Short Term Treasury Bonds",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.06
+      }
+    ],
+    "asset_notes": "Merriman specifically calls for 8% short term TIPS and 12% short term bonds.  I don’t have good data for TIPS, but in an effort to maintain his design intent I added it to the short term bond allocation.  Be sure to read Merriman’s explanation for why he chooses the funds he does.",
+    "author": "Paul Merriman is a retired investing adviser who continues to dedicate his time to investing education. You can read about the Ultimate Buy and Hold portfolio at The Merriman Financial Education Foundation.",
+    "overview": "The Ultimate Buy and Hold portfolio (also sometimes referred to as the Merriman Ultimate portfolio) is a very broadly diversified portfolio that takes international, size, and value diversification to their logical extremes.\n\nDomestic\n\nLarge Cap\n\nBlend\n\n\n\nValue\n\n\n\n\n\nSmall Cap\n\nBlend\n\n\n\nValue\n\n\n\n\n\nREITs\n\nBlend\n\n\n\nValue\n\nBlend\n\n\n\nValue\n\nInternational\n\nLarge Cap\n\nBlend\n\n\n\nValue\n\n\n\n\n\nSmall Cap\n\nBlend\n\n\n\nValue\n\n\n\n\n\n Emerging Markets\n\nBlend\n\n\n\nValue\n\nBlend\n\n\n\nValue\n\nMerriman often describes the choice of these ten assets by adding them one at a time and noting the progressive improvement of portfolio returns with every step. The resulting allocation represents his vision of the pinnacle of thoughtful diversification, which is the origin of the “Ultimate” name.\n\nTo determine the final percentages, Merriman advocates for equal weighting of each stock asset while adjusting the overall percentage to accommodate as many bonds that are necessary to dial the volatility back to whatever is comfortable for the investor. It thus combines an advanced factor investing mindset for stocks with an old-school view of bonds into a portfolio that a lot of investors can appreciate."
+  },
+  "weird-portfolio": {
+    "name": "Portfolio Charts",
+    "composition": [
+      {
+        "element": "United States Small Cap Value Stocks",
+        "weight": 0.2
+      },
+      {
+        "element": "Developed ex-US Small Cap Blend Stocks",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Long Term Treasury Bonds",
+        "weight": 0.2
+      },
+      {
+        "element": "United States Real Estate Investment Trusts",
+        "weight": 0.2
+      },
+      {
+        "element": "Global Gold",
+        "weight": 0.2
+      }
+    ],
+    "asset_notes": "1. Value Stock Geek specifically calls for 10% US REITs and 10% international REITs. Since I don’t have data for international REITs, I included them in the US allocation. Be sure to read his explanation to understand his full design intent.",
+    "author": "Value Stock Geek is a DIY value investor who discusses investing in his newsletter, on his podcast, and on Twitter. He writes about his portfolio philosophy in his free online book The Weird Portfolio.",
+    "overview": "Value Stock Geek has an interesting and refreshingly honest approach to investing. Because he is a natural stock picker and value investor who enjoys researching individual companies, one might think that he’d not be the biggest fan of passive asset allocation. But to the contrary — the Weird Portfolio is his solution for establishing a secure investing foundation that allows him to invest in what he calls his “speculative” portfolio without worry.\n\nTrue to his value investing moniker, the Weird Portfolio commits to small and value stock allocations over traditional cap-weighted funds. Beyond simply expanding into international markets, it also incorporates modern risk parity concepts with multiple volatile assets like gold, REITs, and long term treasuries to balance each other out and generate consistent returns in any economic condition.\n\nWith multiple complementary assets including international diversification and factor investing ideas, the Weird Portfolio may indeed seem strange in an old-school sense but is a decidedly contemporary mix of popular investing concepts."
+  }
+}
