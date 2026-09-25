@@ -1,0 +1,21 @@
+<nav>
+{{ partial "docs/brand" . }}
+{{ partial "docs/search" . }}
+
+
+{{ partial "docs/inject/menu-before" . }}
+{{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.before) }}
+
+{{ if not .Site.Params.BookHideMenuFiletree }}
+  {{ partial "docs/menu-filetree" . }}
+{{ end }}
+
+{{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.after) }}
+{{ partial "docs/inject/menu-after" . }}
+</nav>
+
+<!-- Restore menu position as soon as possible to avoid flickering -->
+{{ $script := resources.Get "menu-reset.js" | resources.Minify }}
+{{ with $script.Content }}
+  <script>{{ . | safeJS }}</script>
+{{ end }}

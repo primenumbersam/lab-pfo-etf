@@ -1,0 +1,1961 @@
+{
+  "BIL": {
+    "symbol": "BIL",
+    "name": "State Street SPDR Bloomberg 1-3 Month T-Bill ETF",
+    "provider": "State Street Investment Management",
+    "index": "Bloomberg 1-3 Month U.S. Treasury Bill Index",
+    "currency": "USD",
+    "inception_date": "2007-05-30",
+    "expense_ratio": 0.0013529999,
+    "aum": 46752960512,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Bills",
+    "top_holdings": null,
+    "returns": {
+      "1m": 0.26,
+      "3m": 0.88,
+      "real_3m": 0.28,
+      "ytd": 2.59,
+      "1y": 3.64
+    }
+  },
+  "DIA": {
+    "symbol": "DIA",
+    "name": "State Street SPDR Dow Jones Industrial Average ETF Trust",
+    "provider": "State Street Investment Management",
+    "index": "Dow Jones Industrial Average",
+    "currency": "USD",
+    "inception_date": "1998-01-20",
+    "expense_ratio": 0.0016,
+    "aum": 45455503360,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large",
+    "top_holdings": [
+      {
+        "symbol": "GS",
+        "name": "The Goldman Sachs Group Inc",
+        "weight": 0.1145279
+      },
+      {
+        "symbol": "CAT",
+        "name": "Caterpillar Inc",
+        "weight": 0.0890268
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.056632098
+      },
+      {
+        "symbol": "AMGN",
+        "name": "Amgen Inc",
+        "weight": 0.0479903
+      },
+      {
+        "symbol": "UNH",
+        "name": "UnitedHealth Group Inc",
+        "weight": 0.043472398
+      },
+      {
+        "symbol": "V",
+        "name": "Visa Inc Class A",
+        "weight": 0.0423515
+      },
+      {
+        "symbol": "TRV",
+        "name": "The Travelers Companies Inc",
+        "weight": 0.0408511
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase \u0026 Co",
+        "weight": 0.039744798
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.0378838
+      },
+      {
+        "symbol": "SHW",
+        "name": "Sherwin-Williams Co",
+        "weight": 0.037823603
+      }
+    ],
+    "returns": {
+      "1m": -3.99,
+      "3m": -0.93,
+      "real_3m": -1.52,
+      "ytd": 7.85,
+      "1y": 12.85
+    }
+  },
+  "EFV": {
+    "symbol": "EFV",
+    "name": "iShares MSCI EAFE Value ETF",
+    "provider": "iShares",
+    "index": "MSCI EAFE Value Index",
+    "currency": "USD",
+    "inception_date": "2005-08-05",
+    "expense_ratio": 0.0031,
+    "aum": 31719518208,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Developed-Large-Value",
+    "top_holdings": [
+      {
+        "symbol": "HSBA.L",
+        "name": "HSBC Holdings PLC",
+        "weight": 0.0314881
+      },
+      {
+        "symbol": "SHEL.L",
+        "name": "Shell PLC",
+        "weight": 0.022302
+      },
+      {
+        "symbol": "NESN.SW",
+        "name": "Nestle SA",
+        "weight": 0.0222295
+      },
+      {
+        "symbol": "8306.T",
+        "name": "Mitsubishi UFJ Financial Group Inc",
+        "weight": 0.021798698
+      },
+      {
+        "symbol": "ALV.DE",
+        "name": "Allianz SE",
+        "weight": 0.0176299
+      },
+      {
+        "symbol": "ROP.SW",
+        "name": "Roche Holding AG Ordinary Shares new",
+        "weight": 0.0176067
+      },
+      {
+        "symbol": "7203.T",
+        "name": "Toyota Motor Corp",
+        "weight": 0.0165923
+      },
+      {
+        "symbol": "NOVN.SW",
+        "name": "Novartis AG Registered Shares",
+        "weight": 0.0160609
+      },
+      {
+        "symbol": "TTE.PA",
+        "name": "TotalEnergies SE",
+        "weight": 0.015145
+      },
+      {
+        "symbol": "BBVA.MC",
+        "name": "Banco Bilbao Vizcaya Argentaria SA",
+        "weight": 0.0143821
+      }
+    ],
+    "returns": {
+      "1m": -3.05,
+      "3m": 5.11,
+      "real_3m": 4.48,
+      "ytd": 15.11,
+      "1y": 25.26
+    }
+  },
+  "GLD": {
+    "symbol": "GLD",
+    "name": "SPDR Gold Shares",
+    "provider": "State Street Investment Management",
+    "index": "LBMA Gold Price PM",
+    "currency": "USD",
+    "inception_date": "2004-11-18",
+    "expense_ratio": 0.004,
+    "aum": 152861196288,
+    "asset_class": "Commodities \u0026 Real Estate",
+    "asset_type": "Gold-Global",
+    "top_holdings": null,
+    "returns": {
+      "1m": -8.5,
+      "3m": 6.02,
+      "real_3m": 5.39,
+      "ytd": -1.17,
+      "1y": 14.09
+    }
+  },
+  "GOVT": {
+    "symbol": "GOVT",
+    "name": "iShares U.S. Treasury Bond ETF",
+    "provider": "iShares",
+    "index": "ICE U.S. Treasury Core Bond Index",
+    "currency": "USD",
+    "inception_date": "2012-02-24",
+    "expense_ratio": 0.0005,
+    "aum": 41821908992,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Intermediate",
+    "top_holdings": null,
+    "returns": {
+      "1m": -2.42,
+      "3m": -2.92,
+      "real_3m": -3.5,
+      "ytd": -2.33,
+      "1y": -1.48
+    }
+  },
+  "GSG": {
+    "symbol": "GSG",
+    "name": "iShares S\u0026P GSCI Commodity-Indexed Trust",
+    "provider": "iShares",
+    "index": "S\u0026P GSCI Commodity-Indexed Trust",
+    "currency": "USD",
+    "inception_date": "2006-07-21",
+    "expense_ratio": 0.0075,
+    "aum": 1007052672,
+    "asset_class": "Commodities \u0026 Real Estate",
+    "asset_type": "Commodities-Global",
+    "top_holdings": null,
+    "returns": {
+      "1m": 11.15,
+      "3m": 26.32,
+      "real_3m": 25.57,
+      "ytd": 58.2,
+      "1y": 57.51
+    }
+  },
+  "IAU": {
+    "symbol": "IAU",
+    "name": "iShares Gold Trust",
+    "provider": "iShares",
+    "index": "LBMA Gold Price PM",
+    "currency": "USD",
+    "inception_date": "2005-01-28",
+    "expense_ratio": 0.0025,
+    "aum": 67539091456,
+    "asset_class": "Commodities \u0026 Real Estate",
+    "asset_type": "Gold-Global",
+    "top_holdings": null,
+    "returns": {
+      "1m": -8.5,
+      "3m": 6.06,
+      "real_3m": 5.43,
+      "ytd": -1.07,
+      "1y": 14.24
+    }
+  },
+  "IEMG": {
+    "symbol": "IEMG",
+    "name": "iShares Core MSCI Emerging Markets ETF",
+    "provider": "iShares",
+    "index": "MSCI Emerging Markets Investable Market Index",
+    "currency": "USD",
+    "inception_date": "2012-10-24",
+    "expense_ratio": 0.00090000004,
+    "aum": 160899022848,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Emerging-Large",
+    "top_holdings": [
+      {
+        "symbol": "2330.TW",
+        "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+        "weight": 0.1320219
+      },
+      {
+        "symbol": "005930.KQ",
+        "name": "Samsung Electronics Co Ltd",
+        "weight": 0.0628125
+      },
+      {
+        "symbol": "000660.KQ",
+        "name": "SK hynix Inc",
+        "weight": 0.047751497
+      },
+      {
+        "symbol": "0700.HK",
+        "name": "Tencent Holdings Ltd",
+        "weight": 0.0250639
+      },
+      {
+        "symbol": "9988.HK",
+        "name": "Alibaba Group Holding Ltd Ordinary Shares",
+        "weight": 0.0172754
+      },
+      {
+        "symbol": "2454.TW",
+        "name": "MediaTek Inc",
+        "weight": 0.0126285
+      },
+      {
+        "symbol": "2308.TW",
+        "name": "Delta Electronics Inc",
+        "weight": 0.0079931
+      },
+      {
+        "symbol": "005935",
+        "name": "Samsung Electronics Co Ltd Participating Preferred",
+        "weight": 0.0077129
+      },
+      {
+        "symbol": "00939",
+        "name": "China Construction Bank Corp Class H",
+        "weight": 0.0072202
+      },
+      {
+        "symbol": "2317.TW",
+        "name": "Hon Hai Precision Industry Co Ltd",
+        "weight": 0.0068228003
+      }
+    ],
+    "returns": {
+      "1m": -0.23,
+      "3m": -0.57,
+      "real_3m": -1.16,
+      "ytd": 22.52,
+      "1y": 27.53
+    }
+  },
+  "IGOV": {
+    "symbol": "IGOV",
+    "name": "iShares International Treasury Bond ETF",
+    "provider": "iShares",
+    "index": "S\u0026P International Sovereign Ex-U.S. 1-3 Year Bond Index",
+    "currency": "USD",
+    "inception_date": "2009-01-30",
+    "expense_ratio": 0.0034999999,
+    "aum": 1546595712,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-Developed-Intermediate",
+    "top_holdings": null,
+    "returns": {
+      "1m": -4.17,
+      "3m": -2.49,
+      "real_3m": -3.07,
+      "ytd": -4.03,
+      "1y": -4.42
+    }
+  },
+  "IJR": {
+    "symbol": "IJR",
+    "name": "iShares Core S\u0026P Small-Cap ETF",
+    "provider": "iShares",
+    "index": "S\u0026P SmallCap 600 Index",
+    "currency": "USD",
+    "inception_date": "2000-05-26",
+    "expense_ratio": 0.00059999997,
+    "aum": 109249667072,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Small",
+    "top_holdings": [
+      {
+        "symbol": "XTSLA",
+        "name": "BlackRock Cash Funds Treasury SL Agency",
+        "weight": 0.019906301
+      },
+      {
+        "symbol": "CORT",
+        "name": "Corcept Therapeutics Inc",
+        "weight": 0.0060452996
+      },
+      {
+        "symbol": "GKOS",
+        "name": "Glaukos Corp",
+        "weight": 0.005887
+      },
+      {
+        "symbol": "PAYC",
+        "name": "Paycom Software Inc",
+        "weight": 0.0055407
+      },
+      {
+        "symbol": "EAT",
+        "name": "Brinker International Inc",
+        "weight": 0.0054702
+      },
+      {
+        "symbol": "MTCH",
+        "name": "Match Group Inc Ordinary Shares - New",
+        "weight": 0.0052951
+      },
+      {
+        "symbol": "JXN",
+        "name": "Jackson Financial Inc",
+        "weight": 0.0051883
+      },
+      {
+        "symbol": "VSAT",
+        "name": "Viasat Inc",
+        "weight": 0.0051025
+      },
+      {
+        "symbol": "PTGX",
+        "name": "Protagonist Therapeutics Inc",
+        "weight": 0.0049877
+      },
+      {
+        "symbol": "KMX",
+        "name": "CarMax Inc",
+        "weight": 0.0048578
+      }
+    ],
+    "returns": {
+      "1m": -5.74,
+      "3m": -5.46,
+      "real_3m": -6.02,
+      "ytd": 15.59,
+      "1y": 17.93
+    }
+  },
+  "IWF": {
+    "symbol": "IWF",
+    "name": "iShares Russell 1000 Growth ETF",
+    "provider": "iShares",
+    "index": "Russell 1000 Growth Index",
+    "currency": "USD",
+    "inception_date": "2000-05-26",
+    "expense_ratio": 0.0018000001,
+    "aum": 125535297536,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large-Growth",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.1545114
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.0744561
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.059321098
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.0565341
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.051687296
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.0478447
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology Inc",
+        "weight": 0.0324229
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc",
+        "weight": 0.0322468
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc Class A",
+        "weight": 0.0308795
+      },
+      {
+        "symbol": "LLY",
+        "name": "Eli Lilly and Co",
+        "weight": 0.0277053
+      }
+    ],
+    "returns": {
+      "1m": 3.2,
+      "3m": 6.46,
+      "real_3m": 5.83,
+      "ytd": 6.45,
+      "1y": 8.41
+    }
+  },
+  "QQQ": {
+    "symbol": "QQQ",
+    "name": "Invesco QQQ Trust",
+    "provider": "Invesco",
+    "index": "NASDAQ-100 Index",
+    "currency": "USD",
+    "inception_date": "1999-03-10",
+    "expense_ratio": 0.0018000001,
+    "aum": 488981004288,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.0850652
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.0740928
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.059995297
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology Inc",
+        "weight": 0.047521602
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.044489898
+      },
+      {
+        "symbol": "AMD",
+        "name": "Advanced Micro Devices Inc",
+        "weight": 0.033736803
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.0314663
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc",
+        "weight": 0.029264601
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.029135698
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.0279556
+      }
+    ],
+    "returns": {
+      "1m": 4.38,
+      "3m": 3.56,
+      "real_3m": 2.94,
+      "ytd": 21.05,
+      "1y": 24.91
+    }
+  },
+  "SCHD": {
+    "symbol": "SCHD",
+    "name": "Schwab U.S. Dividend Equity ETF",
+    "provider": "Schwab ETFs",
+    "index": "Dow Jones U.S. Dividend 100 Index",
+    "currency": "USD",
+    "inception_date": "2011-10-20",
+    "expense_ratio": 0.00059999997,
+    "aum": 112337240064,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large-Value",
+    "top_holdings": [
+      {
+        "symbol": "MRK",
+        "name": "Merck \u0026 Co Inc",
+        "weight": 0.0477597
+      },
+      {
+        "symbol": "ABT",
+        "name": "Abbott Laboratories",
+        "weight": 0.0476579
+      },
+      {
+        "symbol": "AMGN",
+        "name": "Amgen Inc",
+        "weight": 0.0472101
+      },
+      {
+        "symbol": "KO",
+        "name": "Coca-Cola Co",
+        "weight": 0.042037603
+      },
+      {
+        "symbol": "VZ",
+        "name": "Verizon Communications Inc",
+        "weight": 0.039658
+      },
+      {
+        "symbol": "CVX",
+        "name": "Chevron Corp",
+        "weight": 0.0392911
+      },
+      {
+        "symbol": "HD",
+        "name": "The Home Depot Inc",
+        "weight": 0.0389564
+      },
+      {
+        "symbol": "COP",
+        "name": "ConocoPhillips",
+        "weight": 0.0386332
+      },
+      {
+        "symbol": "UNH",
+        "name": "UnitedHealth Group Inc",
+        "weight": 0.0384864
+      },
+      {
+        "symbol": "PG",
+        "name": "Procter \u0026 Gamble Co",
+        "weight": 0.037872
+      }
+    ],
+    "returns": {
+      "1m": -4.97,
+      "3m": 4.39,
+      "real_3m": 3.77,
+      "ytd": 23.64,
+      "1y": 26.15
+    }
+  },
+  "SCHF": {
+    "symbol": "SCHF",
+    "name": "Schwab International Equity ETF",
+    "provider": "Schwab ETFs",
+    "index": "FTSE Developed ex US Index",
+    "currency": "USD",
+    "inception_date": "2009-11-03",
+    "expense_ratio": 0.00029999999,
+    "aum": 69683953664,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Developed-Large",
+    "top_holdings": [
+      {
+        "symbol": "005930.KQ",
+        "name": "Samsung Electronics Co Ltd",
+        "weight": 0.0282893
+      },
+      {
+        "symbol": "ASML.AS",
+        "name": "ASML Holding NV",
+        "weight": 0.021912001
+      },
+      {
+        "symbol": "000660.KQ",
+        "name": "SK hynix Inc",
+        "weight": 0.021849502
+      },
+      {
+        "symbol": "HSBA.L",
+        "name": "HSBC Holdings PLC",
+        "weight": 0.0116270995
+      },
+      {
+        "symbol": "RY",
+        "name": "Royal Bank of Canada",
+        "weight": 0.0093822
+      },
+      {
+        "symbol": "NOVN.SW",
+        "name": "Novartis AG Registered Shares",
+        "weight": 0.009366401
+      },
+      {
+        "symbol": "SHEL.L",
+        "name": "Shell PLC",
+        "weight": 0.0083235
+      },
+      {
+        "symbol": "NESN.SW",
+        "name": "Nestle SA",
+        "weight": 0.0082036
+      },
+      {
+        "symbol": "8306.T",
+        "name": "Mitsubishi UFJ Financial Group Inc",
+        "weight": 0.0081211
+      }
+    ],
+    "returns": {
+      "1m": -3.39,
+      "3m": -0.07,
+      "real_3m": -0.67,
+      "ytd": 15.59,
+      "1y": 23.73
+    }
+  },
+  "SCHH": {
+    "symbol": "SCHH",
+    "name": "Schwab U.S. REIT ETF",
+    "provider": "Schwab ETFs",
+    "index": "S\u0026P United States REIT Index",
+    "currency": "USD",
+    "inception_date": "2011-01-13",
+    "expense_ratio": 0.0007,
+    "aum": 11197114368,
+    "asset_class": "Commodities \u0026 Real Estate",
+    "asset_type": "REITs-US",
+    "top_holdings": [
+      {
+        "symbol": "WELL",
+        "name": "Welltower Inc",
+        "weight": 0.1104889
+      },
+      {
+        "symbol": "PLD",
+        "name": "Prologis Inc",
+        "weight": 0.0877004
+      },
+      {
+        "symbol": "SPG",
+        "name": "Simon Property Group Inc",
+        "weight": 0.045996297
+      },
+      {
+        "symbol": "DLR",
+        "name": "Digital Realty Trust Inc",
+        "weight": 0.0450111
+      },
+      {
+        "symbol": "EQIX",
+        "name": "Equinix Inc",
+        "weight": 0.042315602
+      },
+      {
+        "symbol": "AMT",
+        "name": "American Tower Corp",
+        "weight": 0.042197097
+      },
+      {
+        "symbol": "O",
+        "name": "Realty Income Corp",
+        "weight": 0.0403313
+      },
+      {
+        "symbol": "PSA",
+        "name": "Public Storage",
+        "weight": 0.0366917
+      },
+      {
+        "symbol": "VMRK",
+        "name": "AvalonBay Communities Inc",
+        "weight": 0.033486098
+      },
+      {
+        "symbol": "VTR",
+        "name": "Ventas Inc",
+        "weight": 0.031147398
+      }
+    ],
+    "returns": {
+      "1m": -7.68,
+      "3m": -6.45,
+      "real_3m": -7.01,
+      "ytd": 8.33,
+      "1y": 7.53
+    }
+  },
+  "SGOV": {
+    "symbol": "SGOV",
+    "name": "iShares 0-3 Month Treasury Bond ETF",
+    "provider": "iShares",
+    "index": "ICE 0-3 Month US Treasury Bill Index",
+    "currency": "USD",
+    "inception_date": "2020-06-01",
+    "expense_ratio": 0.00090000004,
+    "aum": 105976479744,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Bills",
+    "top_holdings": null,
+    "returns": {
+      "1m": 0.29,
+      "3m": 0.9,
+      "real_3m": 0.3,
+      "ytd": 2.64,
+      "1y": 3.73
+    }
+  },
+  "SHY": {
+    "symbol": "SHY",
+    "name": "iShares 1-3 Year Treasury Bond ETF",
+    "provider": "iShares",
+    "index": "ICE U.S. Treasury 1-3 Year Bond Index",
+    "currency": "USD",
+    "inception_date": "2002-07-30",
+    "expense_ratio": 0.0015,
+    "aum": 25913065472,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Short",
+    "top_holdings": null,
+    "returns": {
+      "1m": -0.91,
+      "3m": -0.33,
+      "real_3m": -0.92,
+      "ytd": 0.25,
+      "1y": 1.38
+    }
+  },
+  "SPY": {
+    "symbol": "SPY",
+    "name": "State Street SPDR S\u0026P 500 ETF Trust",
+    "provider": "State Street Investment Management",
+    "index": "S\u0026P 500 Index",
+    "currency": "USD",
+    "inception_date": "1993-01-29",
+    "expense_ratio": 0.000945,
+    "aum": 811937038336,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.08078709
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.0703063
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.0569307
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.0384188
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.0300627
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.026491001
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.0239504
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc Class A",
+        "weight": 0.0189886
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology Inc",
+        "weight": 0.0163338
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc",
+        "weight": 0.0156492
+      }
+    ],
+    "returns": {
+      "1m": 0.41,
+      "3m": 4.74,
+      "real_3m": 4.12,
+      "ytd": 13.38,
+      "1y": 17.3
+    }
+  },
+  "SPYG": {
+    "symbol": "SPYG",
+    "name": "State Street SPDR Portfolio S\u0026P 500 Growth ETF",
+    "provider": "State Street Investment Management",
+    "index": "S\u0026P 500 Growth Index",
+    "currency": "USD",
+    "inception_date": "2000-10-02",
+    "expense_ratio": 0.0004,
+    "aum": 54463148032,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large-Growth",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.1485852
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.1047099
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.0646556
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.055291
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.048722
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.04405
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.0374492
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc Class A",
+        "weight": 0.0349252
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology Inc",
+        "weight": 0.030042501
+      },
+      {
+        "symbol": "BRK-B",
+        "name": "Berkshire Hathaway Inc Class B",
+        "weight": 0.025676798
+      }
+    ],
+    "returns": {
+      "1m": 2.72,
+      "3m": 6.83,
+      "real_3m": 6.19,
+      "ytd": 15.97,
+      "1y": 19.36
+    }
+  },
+  "SPYV": {
+    "symbol": "SPYV",
+    "name": "State Street SPDR Portfolio S\u0026P 500 Value ETF",
+    "provider": "State Street Investment Management",
+    "index": "S\u0026P 500 Value Index",
+    "currency": "USD",
+    "inception_date": "2000-10-02",
+    "expense_ratio": 0.0004,
+    "aum": 36675059712,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large-Value",
+    "top_holdings": [
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.0771956
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.039650097
+      },
+      {
+        "symbol": "XOM",
+        "name": "ExxonMobil Holdings Corp",
+        "weight": 0.022132002
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart Inc",
+        "weight": 0.0152522
+      },
+      {
+        "symbol": "INTC",
+        "name": "Intel Corp",
+        "weight": 0.0146595
+      },
+      {
+        "symbol": "COST",
+        "name": "Costco Wholesale Corp",
+        "weight": 0.0138946995
+      },
+      {
+        "symbol": "BAC",
+        "name": "Bank of America Corp",
+        "weight": 0.0134156
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc",
+        "weight": 0.0130584
+      },
+      {
+        "symbol": "CVX",
+        "name": "Chevron Corp",
+        "weight": 0.0128023
+      },
+      {
+        "symbol": "MRK",
+        "name": "Merck \u0026 Co Inc",
+        "weight": 0.0121063
+      }
+    ],
+    "returns": {
+      "1m": -2.19,
+      "3m": 2.72,
+      "real_3m": 2.11,
+      "ytd": 10.38,
+      "1y": 14.98
+    }
+  },
+  "TLT": {
+    "symbol": "TLT",
+    "name": "iShares 20+ Year Treasury Bond ETF",
+    "provider": "iShares",
+    "index": "ICE U.S. Treasury 20+ Year Bond Index",
+    "currency": "USD",
+    "inception_date": "2002-07-30",
+    "expense_ratio": 0.0015,
+    "aum": 47046328320,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Long",
+    "top_holdings": null,
+    "returns": {
+      "1m": -4.49,
+      "3m": -8.02,
+      "real_3m": -8.57,
+      "ytd": -6.08,
+      "1y": -6.65
+    }
+  },
+  "URTH": {
+    "symbol": "URTH",
+    "name": "iShares MSCI World ETF",
+    "provider": "iShares",
+    "index": "MSCI World Index",
+    "currency": "USD",
+    "inception_date": "2012-01-12",
+    "expense_ratio": 0.0023999999,
+    "aum": 8218298880,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Developed-Large",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.055272102
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.050676297
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.0389838
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.0273399
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.0216824
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.0182271
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.017074
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc Class A",
+        "weight": 0.0136672
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology Inc",
+        "weight": 0.0117568
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc",
+        "weight": 0.0114632
+      }
+    ],
+    "returns": {
+      "1m": -0.8,
+      "3m": 4.19,
+      "real_3m": 3.57,
+      "ytd": 12.53,
+      "1y": 16.97
+    }
+  },
+  "VB": {
+    "symbol": "VB",
+    "name": "Vanguard Morningstar Small-Cap ETF",
+    "provider": "Vanguard",
+    "index": "CRSP US Small Cap Index",
+    "currency": "USD",
+    "inception_date": "2004-01-30",
+    "expense_ratio": 0.00029999999,
+    "aum": 185273745408,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Small",
+    "top_holdings": [
+      {
+        "symbol": "MRNA",
+        "name": "Moderna Inc",
+        "weight": 0.0061602
+      },
+      {
+        "symbol": "NTRA",
+        "name": "Natera Inc",
+        "weight": 0.0053844
+      },
+      {
+        "symbol": "RVMD",
+        "name": "Revolution Medicines Inc Ordinary Shares",
+        "weight": 0.0051035
+      },
+      {
+        "symbol": "CRDO",
+        "name": "Credo Technology Group Holding Ltd",
+        "weight": 0.0046155
+      },
+      {
+        "symbol": "TWLO",
+        "name": "Twilio Inc Class A",
+        "weight": 0.0043959003
+      },
+      {
+        "symbol": "EME",
+        "name": "EMCOR Group Inc",
+        "weight": 0.0040126
+      },
+      {
+        "symbol": "JBL",
+        "name": "Jabil Inc",
+        "weight": 0.0039589
+      },
+      {
+        "symbol": "FTI",
+        "name": "TechnipFMC PLC",
+        "weight": 0.0038299
+      },
+      {
+        "symbol": "ILMN",
+        "name": "Illumina Inc",
+        "weight": 0.0037746998
+      },
+      {
+        "symbol": "P",
+        "name": "Everpure Inc Class A",
+        "weight": 0.0036050999
+      }
+    ],
+    "returns": {
+      "1m": -4.67,
+      "3m": -3.3,
+      "real_3m": -3.88,
+      "ytd": 12.74,
+      "1y": 14.81
+    }
+  },
+  "VBIL": {
+    "symbol": "VBIL",
+    "name": "Vanguard 0-3 Month Treasury Bill ETF",
+    "provider": "Vanguard",
+    "index": "Bloomberg 1-3 Month U.S. Treasury Bill Index",
+    "currency": "USD",
+    "inception_date": "2025-02-12",
+    "expense_ratio": 0.00059999997,
+    "aum": 11407604736,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Bills",
+    "top_holdings": null,
+    "returns": {
+      "1m": 0.29,
+      "3m": 0.9,
+      "real_3m": 0.3,
+      "ytd": 2.65,
+      "1y": 3.75
+    }
+  },
+  "VBK": {
+    "symbol": "VBK",
+    "name": "Vanguard Morningstar Small-Cap Growth ETF",
+    "provider": "Vanguard",
+    "index": "CRSP US Small Cap Growth Index",
+    "currency": "USD",
+    "inception_date": "2004-01-30",
+    "expense_ratio": 0.0005,
+    "aum": 44709470208,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Small-Growth",
+    "top_holdings": [
+      {
+        "symbol": "NTRA",
+        "name": "Natera Inc",
+        "weight": 0.012654001
+      },
+      {
+        "symbol": "RVMD",
+        "name": "Revolution Medicines Inc Ordinary Shares",
+        "weight": 0.0119935
+      },
+      {
+        "symbol": "CRDO",
+        "name": "Credo Technology Group Holding Ltd",
+        "weight": 0.0108469995
+      },
+      {
+        "symbol": "TWLO",
+        "name": "Twilio Inc Class A",
+        "weight": 0.010330499
+      },
+      {
+        "symbol": "FTI",
+        "name": "TechnipFMC PLC",
+        "weight": 0.0089995
+      },
+      {
+        "symbol": "P",
+        "name": "Everpure Inc Class A",
+        "weight": 0.008472499
+      },
+      {
+        "symbol": "OKTA",
+        "name": "Okta Inc Class A",
+        "weight": 0.0084032
+      },
+      {
+        "symbol": "ATI",
+        "name": "ATI Inc",
+        "weight": 0.0080499
+      },
+      {
+        "symbol": "CASY",
+        "name": "Casey's General Stores Inc",
+        "weight": 0.0080309
+      },
+      {
+        "symbol": "NVT",
+        "name": "nVent Electric PLC",
+        "weight": 0.0070418
+      }
+    ],
+    "returns": {
+      "1m": -4.23,
+      "3m": -4.57,
+      "real_3m": -5.14,
+      "ytd": 13.16,
+      "1y": 14.59
+    }
+  },
+  "VBR": {
+    "symbol": "VBR",
+    "name": "Vanguard Morningstar Small-Cap Value ETF",
+    "provider": "Vanguard",
+    "index": "CRSP US Small Cap Value Index",
+    "currency": "USD",
+    "inception_date": "2004-01-30",
+    "expense_ratio": 0.0005,
+    "aum": 68218187776,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Small-Value",
+    "top_holdings": [
+      {
+        "symbol": "MRNA",
+        "name": "Moderna Inc",
+        "weight": 0.0107
+      },
+      {
+        "symbol": "JBL",
+        "name": "Jabil Inc",
+        "weight": 0.006876
+      },
+      {
+        "symbol": "ATO",
+        "name": "Atmos Energy Corp",
+        "weight": 0.0059205
+      },
+      {
+        "symbol": "WSM",
+        "name": "Williams-Sonoma Inc",
+        "weight": 0.0057380004
+      },
+      {
+        "symbol": "OMC",
+        "name": "Omnicom Group Inc",
+        "weight": 0.0053261
+      },
+      {
+        "symbol": "TPR",
+        "name": "Tapestry Inc",
+        "weight": 0.0053227004
+      },
+      {
+        "symbol": "SW",
+        "name": "Smurfit WestRock PLC",
+        "weight": 0.0052516
+      },
+      {
+        "symbol": "EXE",
+        "name": "Expand Energy Corp Ordinary Shares - New",
+        "weight": 0.0050136
+      },
+      {
+        "symbol": "NRG",
+        "name": "NRG Energy Inc",
+        "weight": 0.0049605
+      },
+      {
+        "symbol": "USFD",
+        "name": "US Foods Holding Corp",
+        "weight": 0.0049293
+      }
+    ],
+    "returns": {
+      "1m": -5.16,
+      "3m": -2.45,
+      "real_3m": -3.03,
+      "ytd": 12.31,
+      "1y": 14.8
+    }
+  },
+  "VEA": {
+    "symbol": "VEA",
+    "name": "Vanguard FTSE Developed Markets Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "FTSE Developed All Cap ex US Index",
+    "currency": "USD",
+    "inception_date": "2007-07-26",
+    "expense_ratio": 0.00029999999,
+    "aum": 323821109248,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Developed-Large",
+    "top_holdings": [
+      {
+        "symbol": "005930.KQ",
+        "name": "Samsung Electronics Co Ltd",
+        "weight": 0.026129201
+      },
+      {
+        "symbol": "000660.KQ",
+        "name": "SK hynix Inc",
+        "weight": 0.0201173
+      },
+      {
+        "symbol": "ASML.AS",
+        "name": "ASML Holding NV",
+        "weight": 0.019622
+      },
+      {
+        "symbol": "HSBA.L",
+        "name": "HSBC Holdings PLC",
+        "weight": 0.0105373
+      },
+      {
+        "symbol": "ROP.SW",
+        "name": "Roche Holding AG Ordinary Shares new",
+        "weight": 0.0091928
+      },
+      {
+        "symbol": "RY",
+        "name": "Royal Bank of Canada",
+        "weight": 0.0085757
+      },
+      {
+        "symbol": "NOVN.SW",
+        "name": "Novartis AG Registered Shares",
+        "weight": 0.0085071
+      },
+      {
+        "symbol": "SHEL.L",
+        "name": "Shell PLC",
+        "weight": 0.0077100005
+      },
+      {
+        "symbol": "NESN.SW",
+        "name": "Nestle SA",
+        "weight": 0.0075058
+      },
+      {
+        "symbol": "8306.T",
+        "name": "Mitsubishi UFJ Financial Group Inc",
+        "weight": 0.0074349
+      }
+    ],
+    "returns": {
+      "1m": -3.48,
+      "3m": 0.09,
+      "real_3m": -0.51,
+      "ytd": 14.81,
+      "1y": 22.66
+    }
+  },
+  "VGIT": {
+    "symbol": "VGIT",
+    "name": "Vanguard Intermediate-Term Treasury Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "Bloomberg U.S. 3-10 Year Government Float Adjusted Index",
+    "currency": "USD",
+    "inception_date": "2009-11-23",
+    "expense_ratio": 0.00029999999,
+    "aum": 48410165248,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Intermediate",
+    "top_holdings": null,
+    "returns": {
+      "1m": -2.86,
+      "3m": -2.99,
+      "real_3m": -3.57,
+      "ytd": -2.89,
+      "1y": -1.84
+    }
+  },
+  "VGLT": {
+    "symbol": "VGLT",
+    "name": "Vanguard Long-Term Treasury Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "Bloomberg U.S. Long Government Float Adjusted Index",
+    "currency": "USD",
+    "inception_date": "2010-01-04",
+    "expense_ratio": 0.00029999999,
+    "aum": 15133907968,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Long",
+    "top_holdings": null,
+    "returns": {
+      "1m": -4.39,
+      "3m": -7.31,
+      "real_3m": -7.86,
+      "ytd": -5.74,
+      "1y": -5.8
+    }
+  },
+  "VGSH": {
+    "symbol": "VGSH",
+    "name": "Vanguard Short-Term Treasury Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "Bloomberg U.S. 1-5 Year Government Float Adjusted Index",
+    "currency": "USD",
+    "inception_date": "2009-11-23",
+    "expense_ratio": 0.00029999999,
+    "aum": 39195672576,
+    "asset_class": "Fixed Income \u0026 Cash",
+    "asset_type": "Bond-US-Short",
+    "top_holdings": null,
+    "returns": {
+      "1m": -0.93,
+      "3m": -0.32,
+      "real_3m": -0.91,
+      "ytd": 0.32,
+      "1y": 1.48
+    }
+  },
+  "VIG": {
+    "symbol": "VIG",
+    "name": "Vanguard Dividend Appreciation Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "S\u0026P U.S. Dividend Growers Index",
+    "currency": "USD",
+    "inception_date": "2006-05-02",
+    "expense_ratio": 0.0004,
+    "aum": 132408557568,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large-Value",
+    "top_holdings": [
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.046751097
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.045073
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.0434762
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase \u0026 Co",
+        "weight": 0.040704697
+      },
+      {
+        "symbol": "LLY",
+        "name": "Eli Lilly and Co",
+        "weight": 0.039044198
+      },
+      {
+        "symbol": "XOM",
+        "name": "ExxonMobil Holdings Corp",
+        "weight": 0.0284659
+      },
+      {
+        "symbol": "JNJ",
+        "name": "Johnson \u0026 Johnson",
+        "weight": 0.027306499
+      },
+      {
+        "symbol": "V",
+        "name": "Visa Inc Class A",
+        "weight": 0.025021901
+      },
+      {
+        "symbol": "MA",
+        "name": "Mastercard Inc Class A",
+        "weight": 0.020289099
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart Inc",
+        "weight": 0.019617401
+      }
+    ],
+    "returns": {
+      "1m": -3.41,
+      "3m": 0.77,
+      "real_3m": 0.17,
+      "ytd": 8.25,
+      "1y": 11.17
+    }
+  },
+  "VNQ": {
+    "symbol": "VNQ",
+    "name": "Vanguard Real Estate Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "MSCI US Investable Market Real Estate 25/50 Index",
+    "currency": "USD",
+    "inception_date": "2004-09-29",
+    "expense_ratio": 0.0013,
+    "aum": 70822862848,
+    "asset_class": "Commodities \u0026 Real Estate",
+    "asset_type": "REITs-US",
+    "top_holdings": [
+      {
+        "symbol": "VRTPX",
+        "name": "Vanguard Real Estate II Index",
+        "weight": 0.1452754
+      },
+      {
+        "symbol": "WELL",
+        "name": "Welltower Inc",
+        "weight": 0.0872436
+      },
+      {
+        "symbol": "PLD",
+        "name": "Prologis Inc",
+        "weight": 0.0689265
+      },
+      {
+        "symbol": "EQIX",
+        "name": "Equinix Inc",
+        "weight": 0.0545438
+      },
+      {
+        "symbol": "AMT",
+        "name": "American Tower Corp",
+        "weight": 0.043250497
+      },
+      {
+        "symbol": "SPG",
+        "name": "Simon Property Group Inc",
+        "weight": 0.0363784
+      },
+      {
+        "symbol": "DLR",
+        "name": "Digital Realty Trust Inc",
+        "weight": 0.036289
+      },
+      {
+        "symbol": "O",
+        "name": "Realty Income Corp",
+        "weight": 0.0299599
+      },
+      {
+        "symbol": "PSA",
+        "name": "Public Storage",
+        "weight": 0.027202
+      },
+      {
+        "symbol": "VMRK",
+        "name": "Vivmark Residential",
+        "weight": 0.0246343
+      }
+    ],
+    "returns": {
+      "1m": -8.14,
+      "3m": -6.19,
+      "real_3m": -6.75,
+      "ytd": 5.05,
+      "1y": 3.77
+    }
+  },
+  "VOO": {
+    "symbol": "VOO",
+    "name": "Vanguard S\u0026P 500 ETF",
+    "provider": "Vanguard",
+    "index": "S\u0026P 500 Index",
+    "currency": "USD",
+    "inception_date": "2010-09-09",
+    "expense_ratio": 0.00029999999,
+    "aum": 1756880437248,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.0808197
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.0703389
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.056957502
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.0384355
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.0300753
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.0265023
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.0239609
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc Class A",
+        "weight": 0.0189983
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology Inc",
+        "weight": 0.0163428
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc",
+        "weight": 0.0156572
+      }
+    ],
+    "returns": {
+      "1m": 0.42,
+      "3m": 4.93,
+      "real_3m": 4.3,
+      "ytd": 13.42,
+      "1y": 17.37
+    }
+  },
+  "VSS": {
+    "symbol": "VSS",
+    "name": "Vanguard FTSE All-World ex-US Small-Cap Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "FTSE Global All Cap ex US Small Cap Index",
+    "currency": "USD",
+    "inception_date": "2009-04-06",
+    "expense_ratio": 0.00059999997,
+    "aum": 14468046848,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Developed-Small",
+    "top_holdings": [
+      {
+        "symbol": "HBM.TO",
+        "name": "Hudbay Minerals Inc",
+        "weight": 0.0030535
+      },
+      {
+        "symbol": "6274.TWO",
+        "name": "Taiwan Union Technology Corp",
+        "weight": 0.0028402
+      },
+      {
+        "symbol": "ELD.TO",
+        "name": "Eldorado Gold Corp",
+        "weight": 0.0026883
+      },
+      {
+        "symbol": "DPM.TO",
+        "name": "DPM Metals Inc",
+        "weight": 0.0024303
+      },
+      {
+        "symbol": "3081.TWO",
+        "name": "LandMark Optoelectronics Corp",
+        "weight": 0.0022926999
+      },
+      {
+        "symbol": "ATZ.TO",
+        "name": "Aritzia Inc Shs Subord Voting",
+        "weight": 0.0022713998
+      },
+      {
+        "symbol": "GTT.PA",
+        "name": "Gaztransport et technigaz SA",
+        "weight": 0.0022455999
+      },
+      {
+        "symbol": "STB.OL",
+        "name": "Storebrand ASA",
+        "weight": 0.0022002999
+      },
+      {
+        "symbol": "FTT.TO",
+        "name": "Finning International Inc",
+        "weight": 0.0021277
+      },
+      {
+        "symbol": "3189.TW",
+        "name": "Kinsus Interconnect Technology Corp",
+        "weight": 0.0021125001
+      }
+    ],
+    "returns": {
+      "1m": -2.66,
+      "3m": 1.94,
+      "real_3m": 1.33,
+      "ytd": 9.68,
+      "1y": 13.38
+    }
+  },
+  "VT": {
+    "symbol": "VT",
+    "name": "Vanguard Total World Stock Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "FTSE Global All Cap Index",
+    "currency": "USD",
+    "inception_date": "2008-06-26",
+    "expense_ratio": 0.00059999997,
+    "aum": 101670690816,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Developed-Large",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.043189403
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.0384127
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.0316012
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.0211307
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.0168226
+      },
+      {
+        "symbol": "2330.TW",
+        "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+        "weight": 0.015327199
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.0144476
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.0131292
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc Class A",
+        "weight": 0.0105488
+      },
+      {
+        "symbol": "MU",
+        "name": "Micron Technology Inc",
+        "weight": 0.0090636
+      }
+    ],
+    "returns": {
+      "1m": -0.95,
+      "3m": 2.98,
+      "real_3m": 2.37,
+      "ytd": 13.72,
+      "1y": 18.12
+    }
+  },
+  "VUG": {
+    "symbol": "VUG",
+    "name": "Vanguard Morningstar Growth ETF",
+    "provider": "Vanguard",
+    "index": "CRSP US Large Cap Growth Index",
+    "currency": "USD",
+    "inception_date": "2004-01-30",
+    "expense_ratio": 0.00029999999,
+    "aum": 384533856256,
+    "asset_class": "US Equities",
+    "asset_type": "Stocks-US-Large-Growth",
+    "top_holdings": [
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp",
+        "weight": 0.1361934
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc",
+        "weight": 0.124883
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp",
+        "weight": 0.1012063
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc Class A",
+        "weight": 0.053407203
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com Inc",
+        "weight": 0.047627103
+      },
+      {
+        "symbol": "GOOG",
+        "name": "Alphabet Inc Class C",
+        "weight": 0.0420567
+      },
+      {
+        "symbol": "AVGO",
+        "name": "Broadcom Inc",
+        "weight": 0.041043803
+      },
+      {
+        "symbol": "META",
+        "name": "Meta Platforms Inc Class A",
+        "weight": 0.0338522
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc",
+        "weight": 0.0279314
+      },
+      {
+        "symbol": "LLY",
+        "name": "Eli Lilly and Co",
+        "weight": 0.026449298
+      }
+    ],
+    "returns": {
+      "1m": 3.49,
+      "3m": 9.03,
+      "real_3m": 8.38,
+      "ytd": 11.49,
+      "1y": 14.29
+    }
+  },
+  "VWO": {
+    "symbol": "VWO",
+    "name": "Vanguard FTSE Emerging Markets Index Fund ETF Shares",
+    "provider": "Vanguard",
+    "index": "FTSE Emerging Markets All Cap China A Inclusion Index",
+    "currency": "USD",
+    "inception_date": "2005-03-10",
+    "expense_ratio": 0.00059999997,
+    "aum": 168359133184,
+    "asset_class": "Global Equities",
+    "asset_type": "Stocks-Emerging-Large",
+    "top_holdings": [
+      {
+        "symbol": "2330.TW",
+        "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+        "weight": 0.1471597
+      },
+      {
+        "symbol": "0700.HK",
+        "name": "Tencent Holdings Ltd",
+        "weight": 0.0289597
+      },
+      {
+        "symbol": "9988.HK",
+        "name": "Alibaba Group Holding Ltd Ordinary Shares",
+        "weight": 0.0218683
+      },
+      {
+        "symbol": "2454.TW",
+        "name": "MediaTek Inc",
+        "weight": 0.0146584995
+      },
+      {
+        "symbol": "2308.TW",
+        "name": "Delta Electronics Inc",
+        "weight": 0.0090164
+      },
+      {
+        "symbol": "00939",
+        "name": "China Construction Bank Corp Class H",
+        "weight": 0.0085835
+      },
+      {
+        "symbol": "2317.TW",
+        "name": "Hon Hai Precision Industry Co Ltd",
+        "weight": 0.0077406
+      },
+      {
+        "symbol": "RELIANCE.NS",
+        "name": "Reliance Industries Ltd",
+        "weight": 0.0072648
+      },
+      {
+        "symbol": "HDFCBANK.NS",
+        "name": "HDFC Bank Ltd",
+        "weight": 0.0068361
+      },
+      {
+        "symbol": "ICICIBANK.NS",
+        "name": "ICICI Bank Ltd",
+        "weight": 0.0065233
+      }
+    ],
+    "returns": {
+      "1m": -1.08,
+      "3m": 2.01,
+      "real_3m": 1.4,
+      "ytd": 11.71,
+      "1y": 13.48
+    }
+  }
+}

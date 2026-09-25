@@ -1,0 +1,40 @@
+{{- $content := .Content -}}
+{{- $pattern := `\[\[([^\]\|]+)(?:\|([^\]]+))?\]\]` -}}
+{{- $matches := findRESubmatch $pattern $content -}}
+{{- range $matches -}}
+  {{- $full := index . 0 -}}
+  {{- $target := index . 1 -}}
+  {{- $text := $target -}}
+  {{- if and (gt (len .) 2) (index . 2) -}}
+    {{- $text = index . 2 -}}
+  {{- end -}}
+  {{- $path := strings.TrimPrefix "./" $target -}}
+  {{- $path = strings.TrimSuffix ".md" $path -}}
+  {{- $link := "" -}}
+  {{- $targetPage := or ($.GetPage $path) ($.Site.GetPage $path) -}}
+  {{- if not $targetPage -}}
+    {{- $cleanTarget := path.Base $path -}}
+    {{- range $.Site.Pages -}}
+      {{- if not $targetPage -}}
+        {{- $baseMatch := false -}}
+        {{- with .File -}}
+          {{- $pageBase := path.Base .Path -}}
+          {{- $pageBaseNoExt := strings.TrimSuffix (path.Ext $pageBase) $pageBase -}}
+          {{- if eq $cleanTarget $pageBaseNoExt -}}
+            {{- $baseMatch = true -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if or $baseMatch (eq $cleanTarget .Title) (eq $path .Title) -}}
+          {{- $targetPage = . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $targetPage -}}
+    {{- $link = printf `<a href="%s">%s</a>` .RelPermalink $text -}}
+  {{- else -}}
+    {{- $link = printf `<a href="%s">%s</a>` $target $text -}}
+  {{- end -}}
+  {{- $content = replace $content $full $link -}}
+{{- end -}}
+{{- $content | safeHTML -}}

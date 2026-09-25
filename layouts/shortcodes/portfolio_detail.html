@@ -1,0 +1,502 @@
+{{- $slug := .Get 0 | default (.Page.File.BaseFileName) -}}
+{{- $pfoAll := hugo.Data.portfolios -}}
+{{- $pfo := index $pfoAll $slug -}}
+
+{{- if not $pfo -}}
+<div style="padding: 1rem; color: #ef4444; border: 1px solid #ef4444; border-radius: 6px;">
+  [Error] 포트폴리오 데이터를 찾을 수 없습니다: <code>{{ $slug }}</code>
+</div>
+{{- else -}}
+
+{{- $scoresData := hugo.Data.scores -}}
+{{- $scoreItem := dict -}}
+{{- if $scoresData -}}
+{{- range $scoresData.items -}}
+{{- if eq .slug $slug -}}
+{{- $scoreItem = . -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{- $seriesData := index (index hugo.Data "series") $slug -}}
+
+<div class="portfolio-detail-wrapper" style="margin-bottom: 2rem;">
+
+  <!-- Header Badge & Category -->
+  <div
+    style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(128,128,128,0.2);">
+    <div>
+      <span
+        style="display: inline-block; padding: 0.2rem 0.65rem; border-radius: 4px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-size: 0.8rem; font-weight: 600;">
+        {{ $pfo.category }}
+      </span>
+      <h1 style="margin: 0.4rem 0 0 0; font-size: 1.85rem;">{{ $pfo.name }}</h1>
+    </div>
+    {{- with $scoreItem -}}
+    <div style="text-align: right;">
+      <span style="font-size: 0.75rem; color: #888; text-transform: uppercase;">Composite Score</span>
+      <div style="font-size: 1.5rem; font-weight: 800; color: #3b82f6;">{{ .composite_score }} <span
+          style="font-size: 0.85rem; font-weight: 500; color: #888;">(Rank #{{ .rank }})</span></div>
+    </div>
+    {{- end -}}
+  </div>
+
+  <!-- 4 Core Metrics Cards -->
+  {{- with $scoreItem -}}
+  <div
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.65rem; margin-bottom: 1.5rem;">
+    <div
+      style="padding: 0.65rem; border: 1px solid rgba(128,128,128,0.2); border-radius: 6px; text-align: center; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+      <div style="font-size: 0.72rem; color: #888; margin-bottom: 0.2rem;">실질 복리 수익률 (g_p)</div>
+      <div style="font-size: 1.25rem; font-weight: 700; color: #10b981;">{{ .geometric_return }}%</div>
+    </div>
+    <div
+      style="padding: 0.65rem; border: 1px solid rgba(128,128,128,0.2); border-radius: 6px; text-align: center; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+      <div style="font-size: 0.72rem; color: #888; margin-bottom: 0.2rem;">비대칭도 (Omega)</div>
+      <div style="font-size: 1.25rem; font-weight: 700; color: #3b82f6;">{{ .omega_ratio }}</div>
+    </div>
+    <div
+      style="padding: 0.65rem; border: 1px solid rgba(128,128,128,0.2); border-radius: 6px; text-align: center; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+      <div style="font-size: 0.72rem; color: #888; margin-bottom: 0.2rem;">낙폭정도 (RMSE DD)</div>
+      <div style="font-size: 1.25rem; font-weight: 700; color: #f59e0b;">{{ .rmse_dd }}%</div>
+    </div>
+    <div
+      style="padding: 0.65rem; border: 1px solid rgba(128,128,128,0.2); border-radius: 6px; text-align: center; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+      <div style="font-size: 0.72rem; color: #888; margin-bottom: 0.2rem;">진입시점 민감도 (Sensitivity)</div>
+      <div style="font-size: 1.25rem; font-weight: 700; color: #ec4899;">{{ .start_date_sensitivity }}</div>
+    </div>
+  </div>
+  {{- end -}}
+
+  <!-- Overview & Author -->
+  <div style="margin-bottom: 1.5rem; line-height: 1.65; font-size: 0.92rem;">
+    {{- with $pfo.author -}}
+    <p style="color: #888; font-size: 0.85rem; margin-bottom: 0.6rem;">
+      <strong>Author:</strong> {{ . }}
+    </p>
+    {{- end -}}
+    {{- with $pfo.overview -}}
+    <p style="white-space: pre-line; margin-top: 0.4rem;">{{ . }}</p>
+    {{- end -}}
+  </div>
+  {{- with $pfo.note -}}
+  <details
+    style="margin-top: 0.75rem; padding: 0.6rem 0.9rem; border: 1px solid rgba(128,128,128,0.25); border-radius: 6px; font-size: 0.85rem; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+    <summary style="cursor: pointer; font-weight: 600; color: #888;">잡소리 (Note)</summary>
+    <div style="margin-top: 0.6rem; line-height: 1.6; white-space: pre-line; color: #aaa;">{{ . }}</div>
+  </details>
+  {{- end -}}
+
+  <!-- Composition Table & Asset Notes -->
+  <div style="margin-bottom: 2rem;">
+    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.05rem;">자산 구성 및 배분 비중 (Composition)</h3>
+    <table
+      style="display: table !important; width: 100% !important; border-collapse: collapse; font-size: 0.88rem; margin: 0.5rem 0 1rem 0;">
+      <thead>
+        <tr style="border-bottom: 2px solid var(--theme-border, #4c566a); text-align: left;">
+          <th style="padding: 0.55rem 0.75rem;">자산 유형 (Asset Type)</th>
+          <th style="padding: 0.55rem 0.75rem; text-align: right; width: 120px;">비중 (Weight)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{- range $pfo.composition -}}
+        {{- $pct := mul .weight 100 -}}
+        <tr style="border-bottom: 1px solid rgba(128,128,128,0.18);">
+          <td style="padding: 0.55rem 0.75rem; font-weight: 500;">{{ .element }}</td>
+          <td style="padding: 0.55rem 0.75rem; text-align: right; font-weight: 600; color: #3b82f6;">{{ printf "%.1f"
+            $pct }}%</td>
+        </tr>
+        {{- end -}}
+      </tbody>
+    </table>
+
+
+  </div>
+
+  <hr style="margin: 2rem 0; border: none; border-top: 1px solid rgba(128,128,128,0.2);" />
+
+  <!-- 4 Deep-Dive Charts Layout -->
+  <h2 style="margin: 0 0 1rem 0; font-size: 1.35rem;">계량 분석 시각화 (Visualization)</h2>
+
+  <!-- Chart Block 1: Col-2 (Rolling 10Y Returns & CAGR Distribution along N) -->
+  <div
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
+    <!-- Chart 1: Rolling 10Y Returns -->
+    <div
+      style="border: 1px solid rgba(128,128,128,0.2); border-radius: 8px; padding: 1rem; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+      <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.2rem;">10년 롤링 복리 실질 수익률 (Rolling 10Y CAGR)
+      </div>
+      <div style="font-size: 0.75rem; color: #888; margin-bottom: 0.75rem;">임의의 10년 보유 시 실질 복리 수익률 추세</div>
+      <div id="chart-rolling-10y" style="width: 100%; height: 260px;"></div>
+    </div>
+
+    <!-- Chart 2: CAGR Distribution along N Funnel -->
+    <div
+      style="border: 1px solid rgba(128,128,128,0.2); border-radius: 8px; padding: 1rem; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+      <div style="font-weight: 600; font-size: 0.92rem; margin-bottom: 0.2rem;">투자 기간별 실질 수익률 수렴 (CAGR along N)</div>
+      <div style="font-size: 0.75rem; color: #888; margin-bottom: 0.75rem;">보유 기간(1~30년)에 따른 분위수(Min, 15th, Median,
+        85th, Max) 변동폭</div>
+      <div id="chart-funnel-n" style="width: 100%; height: 260px;"></div>
+    </div>
+  </div>
+
+  <!-- Chart Block 2: Full Width Annual Real Returns -->
+  <div
+    style="border: 1px solid rgba(128,128,128,0.2); border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem;">
+      <div>
+        <div style="font-weight: 600; font-size: 0.95rem;">연도별 실질 수익률 (Annual Real Returns, 1995~2025)</div>
+        <div style="font-size: 0.75rem; color: #888;">소비자물가(CPI) 차감 연간 실질 총수익률 분포</div>
+      </div>
+      <div id="annual-stats-badge" style="font-size: 0.78rem; color: #888;"></div>
+    </div>
+    <div id="chart-annual-returns" style="width: 100%; height: 280px;"></div>
+  </div>
+
+  <!-- Chart Block 3: Full Width Return Heat Map -->
+  <div
+    style="border: 1px solid rgba(128,128,128,0.2); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; background: var(--theme-box-bg, rgba(255,255,255,0.02));">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+      <div>
+        <div style="font-weight: 600; font-size: 0.95rem;">시작 연도 × 종료 연도 실질 수익률 히트맵 (Return Heat Map)</div>
+        <div style="font-size: 0.75rem; color: #888;">가로축: 종료 연도 (1995~2025) | 세로축: 시작 연도 (1995~2025)</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: #888;">
+        <span>-10% 이하</span>
+        <div
+          style="width: 70px; height: 7px; border-radius: 4px; background: linear-gradient(to right, #991b1b, #ef4444, #334155, #22c55e, #15803d);">
+        </div>
+        <span>+10% 이상</span>
+      </div>
+    </div>
+    <div style="overflow-x: auto; width: 100%; display: flex; justify-content: center; padding: 0.5rem 0;">
+      <div id="chart-heatmap-matrix" style="min-height: 650px;"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Data injection script -->
+<script id="pfo-series-data" type="application/json">
+{{ $seriesData | jsonify }}
+</script>
+
+<script>
+  (function () {
+    function renderAllCharts() {
+      const dataScript = document.getElementById('pfo-series-data');
+      if (!dataScript || !window.echarts) return;
+
+      let payload = null;
+      try {
+        payload = JSON.parse(dataScript.textContent);
+        if (typeof payload === 'string') {
+          payload = JSON.parse(payload);
+        }
+      } catch (e) {
+        console.error('Failed to parse portfolio series data:', e);
+        return;
+      }
+      if (!payload || !payload.years) return;
+
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const textColor = isDark ? '#94a3b8' : '#64748b';
+      const splitLineColor = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)';
+
+      // 1. Chart 1: Rolling 10Y Returns
+      const rollEl = document.getElementById('chart-rolling-10y');
+      if (rollEl) {
+        const rollChart = echarts.init(rollEl, isDark ? 'dark' : null);
+        const rollYears = Object.keys(payload.rolling_10y || {}).sort();
+        const rollVals = rollYears.map(y => payload.rolling_10y[y]);
+
+        rollChart.setOption({
+          backgroundColor: 'transparent',
+          tooltip: {
+            trigger: 'axis',
+            formatter: '{b}년 종료 10년 연환산: <b>{c}%</b>'
+          },
+          grid: { left: 45, right: 15, top: 20, bottom: 25 },
+          xAxis: {
+            type: 'category',
+            data: rollYears,
+            axisLine: { lineStyle: { color: textColor } },
+            axisLabel: { color: textColor, fontSize: 10, interval: 4 }
+          },
+          yAxis: {
+            type: 'value',
+            axisLabel: { color: textColor, formatter: '{value}%', fontSize: 10 },
+            splitLine: { lineStyle: { color: splitLineColor } }
+          },
+          series: [{
+            data: rollVals,
+            type: 'line',
+            smooth: true,
+            symbol: 'none',
+            lineStyle: { color: '#3b82f6', width: 2.2 },
+            areaStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: 'rgba(59, 130, 246, 0.35)' },
+                { offset: 1, color: 'rgba(59, 130, 246, 0.02)' }
+              ])
+            }
+          }]
+        });
+        window.addEventListener('resize', () => rollChart.resize());
+      }
+
+      // 2. Chart 2: CAGR along N Funnel
+      const funnelEl = document.getElementById('chart-funnel-n');
+      if (funnelEl) {
+        const funnelChart = echarts.init(funnelEl, isDark ? 'dark' : null);
+        const funnelData = payload.funnel_by_n || [];
+        const nList = funnelData.map(d => d.n + 'Y');
+        const maxVals = funnelData.map(d => d.max);
+        const p85Vals = funnelData.map(d => d.p85);
+        const medVals = funnelData.map(d => d.median);
+        const p15Vals = funnelData.map(d => d.p15);
+        const minVals = funnelData.map(d => d.min);
+
+        funnelChart.setOption({
+          backgroundColor: 'transparent',
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+              const idx = params[0].dataIndex;
+              const d = funnelData[idx];
+              return `<b>${d.n}년 보유 시 실질 CAGR 분포</b><br/>
+              Max: <span style="color:#10b981;">${d.max}%</span><br/>
+              85th: ${d.p85}%<br/>
+              <b>Median: ${d.median}%</b><br/>
+              15th: ${d.p15}%<br/>
+              Min: <span style="color:#ef4444;">${d.min}%</span>`;
+            }
+          },
+          grid: { left: 45, right: 15, top: 20, bottom: 25 },
+          xAxis: {
+            type: 'category',
+            data: nList,
+            axisLine: { lineStyle: { color: textColor } },
+            axisLabel: { color: textColor, fontSize: 10, interval: 2 }
+          },
+          yAxis: {
+            type: 'value',
+            axisLabel: { color: textColor, formatter: '{value}%', fontSize: 10 },
+            splitLine: { lineStyle: { color: splitLineColor } }
+          },
+          series: [
+            { name: 'Max', type: 'line', data: maxVals, symbol: 'none', lineStyle: { color: '#10b981', width: 1.5, type: 'dashed' } },
+            { name: '85th', type: 'line', data: p85Vals, symbol: 'none', lineStyle: { color: '#60a5fa', width: 1.2 } },
+            { name: 'Median', type: 'line', data: medVals, symbol: 'none', lineStyle: { color: '#3b82f6', width: 2.2 } },
+            { name: '15th', type: 'line', data: p15Vals, symbol: 'none', lineStyle: { color: '#f59e0b', width: 1.2 } },
+            { name: 'Min', type: 'line', data: minVals, symbol: 'none', lineStyle: { color: '#ef4444', width: 1.5, type: 'dashed' } }
+          ]
+        });
+        window.addEventListener('resize', () => funnelChart.resize());
+      }
+
+      // 3. Chart 3: Annual Real Returns (Full Width)
+      const annualEl = document.getElementById('chart-annual-returns');
+      if (annualEl) {
+        const annualChart = echarts.init(annualEl, isDark ? 'dark' : null);
+        const years = payload.years || [];
+        const returns = payload.annual_returns || [];
+
+        let lossCount = 0;
+        returns.forEach(r => { if (r < 0) lossCount++; });
+        const lossRatio = ((lossCount / returns.length) * 100).toFixed(0);
+        const badge = document.getElementById('annual-stats-badge');
+        if (badge) {
+          badge.innerHTML = `총 ${returns.length}년 중 손실 연도: <strong style="color:#ef4444;">${lossCount}년 (${lossRatio}%)</strong>`;
+        }
+
+        annualChart.setOption({
+          backgroundColor: 'transparent',
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+              const val = params[0].value;
+              const sign = val > 0 ? '+' : '';
+              const color = val >= 0 ? '#10b981' : '#ef4444';
+              return `${params[0].name}년 실질 수익률: <strong style="color:${color};">${sign}${val}%</strong>`;
+            }
+          },
+          grid: { left: 45, right: 15, top: 15, bottom: 25 },
+          xAxis: {
+            type: 'category',
+            data: years,
+            axisLine: { lineStyle: { color: textColor } },
+            axisLabel: { color: textColor, fontSize: 10, interval: 3 }
+          },
+          yAxis: {
+            type: 'value',
+            axisLabel: { color: textColor, formatter: '{value}%', fontSize: 10 },
+            splitLine: { lineStyle: { color: splitLineColor } }
+          },
+          series: [{
+            data: returns.map(v => ({
+              value: v,
+              itemStyle: {
+                color: v >= 0 ? '#10b981' : '#ef4444',
+                borderRadius: v >= 0 ? [2, 2, 0, 0] : [0, 0, 2, 2]
+              }
+            })),
+            type: 'bar',
+            barWidth: '65%'
+          }]
+        });
+        window.addEventListener('resize', () => annualChart.resize());
+      }
+
+      // 4. Chart 4: Return Heat Map (Full Width)
+      const heatEl = document.getElementById('chart-heatmap-matrix');
+      if (heatEl) {
+        const years = payload.years || [];
+        const heatmapRaw = payload.heatmap || []; // [sIdx][n-1]
+
+        // 가로축: 종료 연도 (1995 ~ 2025)
+        // 세로축: 시작 연도 (1995 ~ 2025)
+        // Upper Right Triangle: 종료 연도 >= 시작 연도
+        const seriesPoints = [];
+        years.forEach((startY, sIdx) => {
+          const row = heatmapRaw[sIdx] || [];
+          for (let n = 1; n <= years.length; n++) {
+            if (sIdx + n <= years.length) {
+              const endY = startY + n - 1;
+              const endIdx = years.indexOf(endY);
+              const val = row[n - 1];
+              if (endIdx !== -1 && val !== undefined && val !== null) {
+                seriesPoints.push([endIdx, sIdx, val, n]);
+              }
+            }
+          }
+        });
+
+        const leftPadding = 55;
+        const rightPadding = 25;
+        const topPadding = 20;
+        const bottomPadding = 45;
+
+        function updateHeatmapDimensions() {
+          const parentWidth = heatEl.parentElement ? heatEl.parentElement.clientWidth : 750;
+          const availableWidth = parentWidth - (leftPadding + rightPadding);
+          let cellSize = Math.floor(availableWidth / (years.length || 31));
+          if (cellSize < 18) cellSize = 18;
+          if (cellSize > 24) cellSize = 24;
+
+          const gridWidth = cellSize * years.length;
+          const gridHeight = cellSize * years.length;
+          const totalWidth = gridWidth + leftPadding + rightPadding;
+          const totalHeight = gridHeight + topPadding + bottomPadding;
+
+          heatEl.style.width = totalWidth + 'px';
+          heatEl.style.height = totalHeight + 'px';
+
+          return { gridWidth, gridHeight };
+        }
+
+        const dims = updateHeatmapDimensions();
+        const heatChart = echarts.init(heatEl, isDark ? 'dark' : null);
+
+        function getHeatmapOption(gridDims) {
+          return {
+            backgroundColor: 'transparent',
+            tooltip: {
+              position: 'top',
+              formatter: function (params) {
+                const endY = years[params.value[0]];
+                const startY = years[params.value[1]];
+                const val = params.value[2];
+                const n = params.value[3];
+                const sign = val > 0 ? '+' : '';
+                return `<b>${startY} ~ ${endY} (${n}년 보유)</b><br/>연환산 실질 CAGR: <b>${sign}${val}%</b>`;
+              }
+            },
+            grid: {
+              width: gridDims.gridWidth,
+              height: gridDims.gridHeight,
+              left: leftPadding,
+              top: topPadding
+            },
+            xAxis: {
+              type: 'category',
+              data: years,
+              position: 'bottom',
+              splitArea: { show: false },
+              axisLabel: { color: textColor, fontSize: 10, interval: 2 },
+              axisLine: { lineStyle: { color: textColor } },
+              name: '종료 연도 (End Year)',
+              nameLocation: 'middle',
+              nameGap: 28,
+              nameTextStyle: { color: textColor, fontSize: 11, fontWeight: 500 }
+            },
+            yAxis: {
+              type: 'category',
+              data: years,
+              inverse: true,
+              splitArea: { show: false },
+              axisLabel: { color: textColor, fontSize: 10, interval: 2 },
+              axisLine: { lineStyle: { color: textColor } },
+              name: '시작 연도 (Start Year)',
+              nameLocation: 'middle',
+              nameGap: 36,
+              nameTextStyle: { color: textColor, fontSize: 11, fontWeight: 500 }
+            },
+            visualMap: {
+              min: -10,
+              max: 10,
+              dimension: 2,
+              calculable: false,
+              show: false,
+              inRange: {
+                color: ['#991b1b', '#ef4444', '#334155', '#22c55e', '#15803d']
+              }
+            },
+            series: [{
+              name: 'Real CAGR',
+              type: 'heatmap',
+              data: seriesPoints,
+              label: { show: false },
+              itemStyle: {
+                borderWidth: 1,
+                borderColor: isDark ? '#1e293b' : '#ffffff'
+              }
+            }]
+          };
+        }
+
+        heatChart.setOption(getHeatmapOption(dims));
+        heatChart.resize();
+
+        window.addEventListener('resize', () => {
+          const newDims = updateHeatmapDimensions();
+          heatChart.setOption(getHeatmapOption(newDims));
+          heatChart.resize();
+        });
+      }
+    }
+
+    if (window.echarts) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderAllCharts);
+      } else {
+        renderAllCharts();
+      }
+    } else {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js';
+      s.onload = function () {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', renderAllCharts);
+        } else {
+          renderAllCharts();
+        }
+      };
+      document.head.appendChild(s);
+    }
+  })();
+</script>
+
+{{- end -}}

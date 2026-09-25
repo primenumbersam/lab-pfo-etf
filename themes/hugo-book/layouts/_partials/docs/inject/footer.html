@@ -1,0 +1,194 @@
+{{- /* Inject chart assets and runtime init */ -}}
+{{- if .Page.Store.Get "has-chartjs" -}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+(function() {
+  function renderAllChartJS() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const textColor = isDark ? "#d8dee9" : "#3b4252";
+    const gridColor = isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)";
+
+    document.querySelectorAll(".chartjs-instance").forEach(function(wrapper) {
+      if (wrapper.dataset.rendered === "true") return;
+      const canvas = wrapper.querySelector("canvas");
+      const configScript = wrapper.querySelector("script[type='application/json']");
+      if (!canvas || !configScript) return;
+
+      const cfg = JSON.parse(configScript.textContent);
+      new Chart(canvas, {
+        type: cfg.type || "bar",
+        data: cfg.data,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: !!cfg.title,
+              text: cfg.title || "",
+              color: textColor,
+              font: { size: 15, weight: '600' }
+            },
+            legend: {
+              labels: { color: textColor }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            },
+            y: {
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            }
+          }
+        }
+      });
+      wrapper.dataset.rendered = "true";
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderAllChartJS);
+  } else {
+    renderAllChartJS();
+  }
+})();
+</script>
+{{- end -}}
+
+{{- if .Page.Store.Get "has-echarts" -}}
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+<script>
+(function() {
+  function renderAllECharts() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+
+    document.querySelectorAll(".echarts-instance").forEach(function(wrapper) {
+      if (wrapper.dataset.rendered === "true") return;
+      const container = wrapper.querySelector(".echarts-chart-container");
+      const configScript = wrapper.querySelector("script[type='application/json']");
+      if (!container || !configScript || !window.echarts) return;
+
+      const cfg = JSON.parse(configScript.textContent);
+      const myChart = echarts.init(container, isDark ? "dark" : null);
+
+      let option;
+      if (cfg.type === "line" || cfg.type === "time-series" || (cfg.data && cfg.data.dates && !cfg.data.days)) {
+        option = {
+          backgroundColor: "transparent",
+          title: {
+            text: cfg.title || "",
+            left: "center",
+            top: 10,
+            textStyle: { fontSize: 15, fontWeight: "600" }
+          },
+          tooltip: {
+            trigger: "axis"
+          },
+          xAxis: {
+            type: "category",
+            data: cfg.data.dates || cfg.data.labels,
+            axisLabel: { color: isDark ? "#d8dee9" : "#3b4252" }
+          },
+          yAxis: {
+            type: "value",
+            axisLabel: { color: isDark ? "#d8dee9" : "#3b4252" },
+            splitLine: { lineStyle: { color: isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)" } }
+          },
+          series: [
+            {
+              name: (cfg.data.datasets && cfg.data.datasets[0] && cfg.data.datasets[0].label) || "수치",
+              type: "line",
+              smooth: true,
+              data: cfg.data.rates || (cfg.data.datasets && cfg.data.datasets[0] && cfg.data.datasets[0].data),
+              itemStyle: { color: "#ef4444" },
+              areaStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: "rgba(239, 68, 68, 0.4)" },
+                  { offset: 1, color: "rgba(239, 68, 68, 0.02)" }
+                ])
+              }
+            }
+          ]
+        };
+      } else {
+        option = {
+          backgroundColor: "transparent",
+          title: {
+            text: cfg.title || "",
+            left: "center",
+            top: 10,
+            textStyle: { fontSize: 15, fontWeight: "600" }
+          },
+          tooltip: {},
+          visualMap: {
+            max: 80,
+            inRange: {
+              color: [
+                "#313695", "#4575b4", "#74add1", "#abd9e9", "#e0f3f8",
+                "#ffffbf", "#fee090", "#fdae61", "#f46d43", "#d73027", "#a50026"
+              ]
+            }
+          },
+          xAxis3D: {
+            type: "category",
+            data: cfg.data.days,
+            name: "요일"
+          },
+          yAxis3D: {
+            type: "category",
+            data: cfg.data.hours,
+            name: "시간대"
+          },
+          zAxis3D: {
+            type: "value",
+            name: "부하량"
+          },
+          grid3D: {
+            boxWidth: 200,
+            boxDepth: 100,
+            viewControl: {
+              alpha: 25,
+              beta: 40,
+              projection: "perspective"
+            },
+            light: {
+              main: {
+                intensity: 1.2,
+                shadow: true
+              },
+              ambient: {
+                intensity: 0.3
+              }
+            }
+          },
+          series: [
+            {
+              type: "bar3D",
+              data: (cfg.data.points || []).map(function(item) {
+                return { value: [item[0], item[1], item[2]] };
+              }),
+              shading: "lambert",
+              label: { show: false },
+              emphasis: { label: { show: false } }
+            }
+          ]
+        };
+      }
+
+      myChart.setOption(option);
+      window.addEventListener("resize", function() { myChart.resize(); });
+      wrapper.dataset.rendered = "true";
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderAllECharts);
+  } else {
+    renderAllECharts();
+  }
+})();
+</script>
+{{- end -}}

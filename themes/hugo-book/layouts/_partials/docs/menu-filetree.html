@@ -1,0 +1,68 @@
+{{ with (partialCached "docs/menu-section" .Site) }}
+  {{ template "book-section-children" (dict "Section" . "CurrentPage" $) }}
+{{ end }}
+
+{{ define "book-section-children" }}{{/* (dict "Section" .Section "CurrentPage" .CurrentPage) */}}
+  <ul>
+    {{ range (where .Section.Pages "Params.bookHidden" "ne" true) }}
+      {{ if .IsSection }}
+        <li {{- if .Params.BookFlatSection }} class="book-section-flat" {{ end -}}>
+          {{ template "book-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
+          {{ template "book-section-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ else if and .IsPage .Content }}
+        <li>
+          {{ template "book-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ end }}
+
+{{ define "book-page-link" }}{{/* (dict "Page" .Page "CurrentPage" .CurrentPage) */}}
+  {{ $current := eq .CurrentPage .Page }}
+  {{ $ancestor := .Page.IsAncestor .CurrentPage }}
+
+  {{- $href := "" -}}
+  {{- /* Determine if page has actual content beyond just a top-level header */ -}}
+  {{- $bodyWithoutH1 := replaceRE `(?m)^\s*#\s+.*$` "" .Page.RawContent -}}
+  {{- $hasContent := and .Page.Content (gt (len (strings.TrimSpace $bodyWithoutH1)) 0) -}}
+
+  {{- if $hasContent -}}
+    {{- $href = .Page.RelPermalink -}}
+  {{- else if .Page.IsSection -}}
+    {{- /* Fallback to the first child page sorted by weight */ -}}
+    {{- with (index (where .Page.Pages "Params.bookHidden" "ne" true) 0) -}}
+      {{- $href = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{ if and .Page.Params.BookCollapseSection .Page.IsSection }}
+    <input type="checkbox" id="section-{{ md5 .Page }}" class="toggle" {{ if or $current $ancestor }}checked{{ end }} />
+    <label for="section-{{ md5 .Page }}" class="flex">
+      <a {{ if $href }}href="{{ $href }}"{{ else }}role="button"{{ end }} class="{{ if $current }}active{{ end }}">
+        {{ template "book-icon-title" .Page -}}
+      </a>
+      <img src="{{ partial "docs/icon" "chevron-right" }}" class="book-icon" alt="{{ partial "docs/text/i18n" "Expand" }}" />
+    </label>
+  {{ else if .Page.Params.BookHref }}
+    <a href="{{ .Page.Params.BookHref }}" class="{{ if $current }}active{{ end }}" target="_blank" rel="noopener">
+      {{ template "book-icon-title" .Page -}}
+    </a>
+  {{ else if $href }}
+    <a href="{{ $href }}" class="{{ if $current }}active{{ end }}">
+      {{ template "book-icon-title" .Page -}}
+    </a>
+  {{ else }}
+    <a>
+      {{ template "book-icon-title" .Page -}}
+    </a>
+  {{ end }}
+{{ end }}
+
+{{ define "book-icon-title" }}
+{{- with .Page.Params.BookIcon -}}
+  <img src="{{ partial "docs/icon" . }}" class="book-icon" alt="{{ partial "docs/text/i18n" . }}" />
+{{- end -}}
+{{- partial "docs/title" .Page -}}
+{{ end }}

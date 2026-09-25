@@ -1,0 +1,58 @@
+<ul class="book-languages theme-switcher">
+  <li>
+    <input type="checkbox" id="theme-toggle" class="toggle" />
+    <label for="theme-toggle" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <svg class="book-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-inline-end: 0.5rem;">
+          <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+          <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+          <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+          <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+        </svg>
+        <span id="theme-current-label">Theme: Auto</span>
+      </a>
+      <img src="{{ partial "docs/icon" "chevron-right" }}" class="book-icon" alt="Expand" />
+    </label>
+
+    <ul>
+      <li>
+        <a role="button" href="javascript:void(0)" onclick="setBookTheme('light')" class="flex flex-auto">Light</a>
+      </li>
+      <li>
+        <a role="button" href="javascript:void(0)" onclick="setBookTheme('dark')" class="flex flex-auto">Dark</a>
+      </li>
+      <li>
+        <a role="button" href="javascript:void(0)" onclick="setBookTheme('auto')" class="flex flex-auto">Auto (OS)</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<script>
+function setBookTheme(theme) {
+  if (theme === 'auto') {
+    localStorage.removeItem('book-theme');
+    document.documentElement.setAttribute('data-theme', 'auto');
+  } else {
+    localStorage.setItem('book-theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+  updateThemeLabel(theme);
+}
+
+function updateThemeLabel(theme) {
+  const label = document.getElementById('theme-current-label');
+  if (!label) return;
+  const names = { light: 'Theme: Light', dark: 'Theme: Dark', auto: 'Theme: Auto' };
+  label.textContent = names[theme] || 'Theme';
+}
+
+(function() {
+  const saved = localStorage.getItem('book-theme') || 'auto';
+  if (saved !== 'auto') {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+  updateThemeLabel(saved);
+})();
+</script>

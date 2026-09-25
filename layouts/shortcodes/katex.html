@@ -1,0 +1,12 @@
+{{- $attributes := merge
+  (dict
+    "output" "html")
+  (cond .IsNamedParams .Params dict)
+-}}
+{{- if .Get "display" -}}
+  {{- warnf "KaTeX param 'display' is deprecated, use 'displayMode'"}}
+  {{- $attributes = merge $attributes (dict "displayMode" true) -}}
+{{- end -}}
+{{- if .Inner -}}
+  {{- transform.ToMath .Inner $attributes -}}
+{{- end -}}

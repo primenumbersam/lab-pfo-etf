@@ -1,0 +1,73 @@
+name: Deploy Hugo Site & Monthly Data Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # 매월 1일 00:00 UTC (한국 시간 09:00) 정기 파이프라인 가동 및 사이트 갱신
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  pipeline-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25.x'
+          cache: true
+
+      - name: Run Data Pipeline (Monthly Schedule & Manual Dispatch Only)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          go run tools/fetcher/main.go
+          go run tools/calculator/main.go
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action [Bot]"
+            git add data/
+            git commit -m "chore(data): auto-update monthly ETF data & scores [skip ci]"
+            git push origin main
+          fi
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.145.0'
+          extended: true
+
+      - name: Build Hugo Site
+        run: hugo --minify
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: pipeline-and-build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

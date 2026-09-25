@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}" />
+
+<script>
+  (function() {
+    const saved = localStorage.getItem('book-theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  })();
+</script>

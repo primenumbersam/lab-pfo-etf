@@ -1,0 +1,116 @@
+baseURL: https://primenumbersam.github.io/lab-pfo-etf/
+title: US ETF Portfolios
+theme: hugo-book
+
+copyright: "gitsam [© CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)<br>Disclaimer: 본 사이트의 모든 데이터, 수치, 차트 및 분석 결과는 비상업적 학술 연구 및 ETF 자산배분 전략 학습 목적으로 제공된다. 금융투자상품에 대한 매수 또는 매도 권유가 아니며, 과거 성과가 미래 수익을 보장하지 않는다."
+
+# Book configuration
+disablePathToLower: true
+# enableGitInfo: true
+
+ignoreFiles:
+  - '\.py$'
+  - '\.db$'
+  - '\.go$'
+  - '\.csv$'
+
+# Needed for mermaid/katex shortcodes
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ["\\[", "\\]"]
+            - ["$$", "$$"]
+          inline:
+            - ["\\(", "\\)"]
+            - ["$", "$"]
+  tableOfContents:
+    startLevel: 1
+  highlight:
+    style: base16-snazzy
+
+defaultContentLanguage: ko
+locale: ko-KR
+
+menu:
+  before:
+    - name: "Dashboard"
+      pageRef: "/"
+      weight: 10
+
+  after:
+    - name: "Github"
+      url: "https://github.com/primenumbersam"
+      weight: 10
+
+taxonomies:
+  tag: tags
+
+params:
+  # (Optional, default light) Sets color theme: light, dark or auto.
+  # Theme 'auto' switches between dark and light modes based on browser/os preferences
+  BookTheme: "auto"
+
+  # (Optional, default none) Controls table of contents visibility on right side of pages.
+  # Start and end levels can be controlled with markup.tableOfContents setting.
+  # You can also specify this parameter per page in front matter.
+  BookToC: false
+
+  # (Optional, default favicon.png) Set the path to a favicon file.
+  # If the favicon is /static/favicon.png then the path would be favicon.png
+  # BookFavicon: "favicon.svg"
+
+  # (Optional, default none) Set the path to a logo for the book.
+  # If the logo is /static/logo.png then the path would be logo.png
+  # BookLogo: /logo.png
+
+  # (Optional, default docs) Specify root page to render child pages as menu.
+  # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/
+  # For backward compatibility you can set '*' to render all sections to menu. Acts same as '/'
+  BookSection: '*'
+
+  # (Optional, default none) Set template for commit link for the page. Requires enableGitInfo.
+  # When set enabled 'Last Modified' and a link to the commit in the footer of the page.
+  # Param is executed as template using .Site, .Page and .GitInfo as context.
+  # BookLastChangeLink: 'https://github.com/alex-shpak/hugo-book/commit/{{ .GitInfo.Hash }}'
+
+  # (Optional, default none) Set template for edit page link.
+  # When set enabled 'Edit this page' link in the footer of the page.
+  # Param is executed as template using .Site, .Page and .Path as context.
+  # BookEditLink: 'https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/{{ .Path }}'
+
+  # (Optional, default 'January 2, 2006') Configure the date format used on the pages
+  # - In git information
+  # - In blog posts
+  # https://gohugo.io/functions/time/format/
+  BookDateFormat: "2006-01-02"
+
+  # (Optional, default true) Enables search function with flexsearch,
+  # Index is built on fly, therefore it might slowdown your website.
+  # Configuration for indexing can be adjusted in i18n folder per language.
+  BookSearch: true
+
+  # (Optional, default true) Enables comments template on pages
+  # By default partals/docs/comments.html includes Disqus template
+  # See https://gohugo.io/content-management/comments/#configure-disqus
+  # Can be overwritten by same param in page frontmatter
+  BookComments: false
+
+  # /!\ This is an experimental feature, might be removed or changed at any time
+  # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
+  # Portable links meant to work with text editors and let you write markdown without {{< relref >}} shortcode
+  # Theme will print warning or error if page referenced in markdown does not exists.
+  # Possible values are false | 'warning' | 'error'
+  BookPortableLinks: 'warning'
+
+  # /!\ This is an experimental feature, might be removed or changed at any time
+  # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
+  # can be false, true or 'precache', precache will try to download all content pages on install.
+  BookServiceWorker: 'precache'
+
+

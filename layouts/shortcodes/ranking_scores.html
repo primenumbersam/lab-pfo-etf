@@ -1,0 +1,4 @@
+{{- $data := hugo.Data.scores.items -}}
+<script id="scores-raw-data" type="application/json">
+{{ $data | jsonify | safeJS }}
+</script>

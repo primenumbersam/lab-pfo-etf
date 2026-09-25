@@ -1,0 +1,32 @@
+{
+  "topic_bar": {
+    "datasets": [
+      {
+        "backgroundColor": "rgba(59, 130, 246, 0.7)",
+        "borderColor": "rgba(59, 130, 246, 1)",
+        "borderWidth": 1,
+        "data": [
+          5,
+          6,
+          3,
+          1,
+          1,
+          2,
+          3,
+          1
+        ],
+        "label": "Hacker News 헤드라인 언급 수"
+      }
+    ],
+    "labels": [
+      "AI",
+      "Rust",
+      "Python",
+      "Go",
+      "Web",
+      "Linux",
+      "Open",
+      "Data"
+    ]
+  }
+}

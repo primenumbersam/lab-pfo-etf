@@ -1,0 +1,129 @@
+{{- $pfoAll := hugo.Data.portfolios -}}
+{{- $scoresAll := hugo.Data.scores -}}
+{{- $scoreMap := dict -}}
+{{- if $scoresAll -}}
+{{- range $scoresAll.items -}}
+{{- $scoreMap = merge $scoreMap (dict .slug .) -}}
+{{- end -}}
+{{- end -}}
+
+{{- $categories := slice
+(dict "slug" "all" "name" "All")
+(dict "slug" "value-weighted" "name" "Value-Weighted")
+(dict "slug" "equal-weighted" "name" "Equal-Weighted")
+(dict "slug" "volatility-parity" "name" "Volatility Parity")
+(dict "slug" "regime-parity" "name" "Regime Parity")
+(dict "slug" "factor-tilted" "name" "Factor-Tilted")
+-}}
+
+{{- $catCounts := dict "all" (len $pfoAll) -}}
+{{- range $slug, $pfo := $pfoAll -}}
+{{- $cSlug := $pfo.category_slug -}}
+{{- $currCount := index $catCounts $cSlug | default 0 -}}
+{{- $catCounts = merge $catCounts (dict $cSlug (add $currCount 1)) -}}
+{{- end -}}
+
+<div class="category-filter-nav" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0;">
+  {{- range $categories -}}
+  {{- $cnt := index $catCounts .slug | default 0 -}}
+  <button class="pfo-filter-btn{{ if eq .slug " all" }} active{{ end }}" data-cat="{{ .slug }}"
+    onclick="filterPortfolios('{{ .slug }}')">
+    {{ .name }} ({{ $cnt }})
+  </button>
+  {{- end -}}
+</div>
+
+<style>
+  .pfo-filter-btn {
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    border: 1px solid var(--theme-border, #4c566a);
+    background: var(--theme-box-bg, rgba(255, 255, 255, 0.05));
+    color: inherit;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+
+  .pfo-filter-btn.active,
+  .pfo-filter-btn:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #fff;
+  }
+
+  .pfo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .pfo-card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 8px;
+    padding: 1.25rem;
+    background: var(--theme-box-bg, rgba(255, 255, 255, 0.02));
+    transition: transform 0.15s ease, border-color 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pfo-card:hover {
+    transform: translateY(-2px);
+    border-color: #3b82f6;
+  }
+
+  .pfo-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+</style>
+
+<div class="pfo-grid" id="pfo-grid">
+  {{- range $slug, $pfo := $pfoAll -}}
+  {{- $matches := findRE `^.*?[다요]\.` $pfo.note 1 -}}
+  {{- $firstSentence := index $matches 0 | default $pfo.note -}}
+  {{- $score := index $scoreMap $slug -}}
+  <div class="pfo-card" data-category="{{ $pfo.category_slug }}">
+    <div>
+      <span class="pfo-badge">{{ $pfo.category }}</span>
+      <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.15rem;">
+        <a href="./{{ $pfo.slug }}/">{{ $pfo.name }}</a>
+      </h3>
+      <p style="font-size: 0.85rem; color: #888; margin-bottom: 0.75rem; line-height: 1.55;">{{ $firstSentence }}</p>
+      {{- if $score -}}
+      <div style="font-size: 0.82rem; margin-bottom: 0.5rem;">
+        <span>실질 연간 수익률: <strong>{{ $score.geometric_return }}%</strong></span> |
+        <span>Omega 비율: <strong>{{ $score.omega_ratio }}</strong></span>
+      </div>
+      {{- end -}}
+    </div>
+    <div style="margin-top: 0.75rem;">
+      <a href="./{{ $pfo.slug }}/" style="font-size: 0.85rem; color: #3b82f6;">상세 분석 & 차트 보기 &rarr;</a>
+    </div>
+  </div>
+  {{- end -}}
+</div>
+
+<script>
+  function filterPortfolios(cat) {
+    document.querySelectorAll('.pfo-filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.cat === cat);
+    });
+    document.querySelectorAll('#pfo-grid .pfo-card').forEach(card => {
+      if (cat === 'all' || card.dataset.category === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>

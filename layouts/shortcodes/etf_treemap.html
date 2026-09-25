@@ -1,0 +1,417 @@
+<div class="etf-treemap-wrapper" style="margin: 0.5rem 0 1rem 0;">
+  <!-- Header Control Bar: Period Switcher & Heat Legend (Compact) -->
+  <div
+    style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.35rem; margin-bottom: 0.35rem; padding: 0.2rem 0;">
+
+    <!-- Period Buttons -->
+    <div style="display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap;">
+      <span style="font-size: 0.78rem; font-weight: 600; color: #888; margin-right: 0.15rem;">Heat:</span>
+      <button class="heat-period-btn active" data-period="real_3m" onclick="switchHeatPeriod('real_3m')">3M
+        Real</button>
+      <button class="heat-period-btn" data-period="3m" onclick="switchHeatPeriod('3m')">3M</button>
+      <button class="heat-period-btn" data-period="ytd" onclick="switchHeatPeriod('ytd')">YTD</button>
+      <button class="heat-period-btn" data-period="1y" onclick="switchHeatPeriod('1y')">1Y</button>
+      <button class="heat-period-btn" data-period="1m" onclick="switchHeatPeriod('1m')">1M</button>
+    </div>
+
+    <!-- Color Spectrum Legend -->
+    <div style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: #888;">
+      <span>-6%</span>
+      <div
+        style="width: 75px; height: 7px; border-radius: 4px; background: linear-gradient(to right, #b91c1c, #ef4444, #334155, #22c55e, #15803d);">
+      </div>
+      <span>+6%</span>
+    </div>
+  </div>
+
+  <!-- Summary Stat Chips (Compact) -->
+  <div class="etf-stats-chips" style="display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.35rem;">
+    <span class="chip"
+      style="font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 9999px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); color: #60a5fa; font-weight: 600;">
+      Total: 37 ETFs ($5.92T)
+    </span>
+    <span class="chip"
+      style="font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 9999px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); color: #93c5fd;">
+      US Equities: 14 ETFs ($4.36T)
+    </span>
+    <span class="chip"
+      style="font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 9999px; background: rgba(5, 150, 105, 0.15); border: 1px solid rgba(5, 150, 105, 0.3); color: #6ee7b7;">
+      Global Equities: 8 ETFs ($0.88T)
+    </span>
+    <span class="chip"
+      style="font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 9999px; background: rgba(217, 119, 6, 0.15); border: 1px solid rgba(217, 119, 6, 0.3); color: #fcd34d;">
+      Fixed Income & Cash: 10 ETFs ($0.38T)
+    </span>
+    <span class="chip"
+      style="font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 9999px; background: rgba(219, 39, 119, 0.15); border: 1px solid rgba(219, 39, 119, 0.3); color: #f9a8d4;">
+      Commodities & Real Estate: 5 ETFs ($0.30T)
+    </span>
+  </div>
+
+  <!-- Treemap Container -->
+  <div id="etf-treemap-container"
+    style="width: 100%; height: 640px; border: 1px solid rgba(128,128,128,0.25); border-radius: 8px; background: var(--theme-box-bg, rgba(255,255,255,0.02)); position: relative;">
+  </div>
+</div>
+
+<style>
+  .heat-period-btn {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--theme-border, #4c566a);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .heat-period-btn:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    color: #60a5fa;
+  }
+
+  .heat-period-btn.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
+    font-weight: 600;
+  }
+</style>
+
+<script id="etf-raw-data" type="application/json">
+{{ hugo.Data.etfs | jsonify }}
+</script>
+
+<script>
+  let currentHeatPeriod = 'real_3m';
+  let etfChartInstance = null;
+  let globalTreeDataBuilder = null;
+
+  function switchHeatPeriod(period) {
+    currentHeatPeriod = period;
+    document.querySelectorAll('.heat-period-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.period === period);
+    });
+    if (globalTreeDataBuilder && etfChartInstance) {
+      const updatedOption = globalTreeDataBuilder(currentHeatPeriod);
+      etfChartInstance.setOption(updatedOption);
+    }
+  }
+
+  (function () {
+    function formatAUM(val) {
+      if (val >= 1e12) return '$' + (val / 1e12).toFixed(2) + 'T';
+      if (val >= 1e9) return '$' + (val / 1e9).toFixed(1) + 'B';
+      if (val >= 1e6) return '$' + (val / 1e6).toFixed(1) + 'M';
+      return '$' + Number(val).toLocaleString();
+    }
+
+    function getHeatColor(ret) {
+      if (ret === null || ret === undefined || isNaN(ret)) return '#334155';
+      if (ret >= 5.0) return '#15803d'; // Strong Green
+      if (ret >= 2.0) return '#16a34a'; // Mid Green
+      if (ret > 0.0) return '#10b981';  // Light Green / Teal
+      if (ret <= -5.0) return '#991b1b'; // Strong Red
+      if (ret <= -2.0) return '#dc2626'; // Mid Red
+      if (ret < 0.0) return '#f87171';  // Light Red
+      return '#334155'; // Neutral
+    }
+
+    function initTreemap() {
+      const container = document.getElementById('etf-treemap-container');
+      const dataScript = document.getElementById('etf-raw-data');
+      if (!container || !dataScript || !window.echarts) return;
+
+      let rawEtfs = {};
+      try {
+        rawEtfs = JSON.parse(dataScript.textContent);
+        if (typeof rawEtfs === 'string') {
+          rawEtfs = JSON.parse(rawEtfs);
+        }
+      } catch (e) {
+        console.error('Failed to parse ETF data for Treemap:', e);
+        return;
+      }
+
+      const classHeaders = {
+        "US Equities": "rgba(30, 58, 138, 0.8)",
+        "Global Equities": "rgba(6, 78, 59, 0.8)",
+        "Fixed Income & Cash": "rgba(120, 53, 15, 0.8)",
+        "Commodities & Real Estate": "rgba(131, 24, 67, 0.8)"
+      };
+
+      function buildOption(period) {
+        const classMap = {};
+
+        for (const [symbol, info] of Object.entries(rawEtfs)) {
+          const assetClass = info.asset_class || "Other";
+          const assetType = info.asset_type || "Other";
+          const aum = info.aum || 0;
+          const rets = info.returns || {};
+          const curRet = rets[period] !== undefined ? rets[period] : null;
+
+          if (!classMap[assetClass]) {
+            classMap[assetClass] = {
+              name: assetClass,
+              itemStyle: {
+                borderColor: classHeaders[assetClass] || 'rgba(71, 85, 105, 0.8)',
+                borderWidth: 2,
+                gapWidth: 3
+              },
+              children: {}
+            };
+          }
+
+          if (!classMap[assetClass].children[assetType]) {
+            classMap[assetClass].children[assetType] = {
+              name: assetType,
+              children: []
+            };
+          }
+
+          classMap[assetClass].children[assetType].children.push({
+            name: symbol,
+            value: aum,
+            currentRet: curRet,
+            returns: rets,
+            fullName: info.name || symbol,
+            provider: info.provider || '',
+            expenseRatio: info.expense_ratio,
+            assetType: assetType,
+            assetClass: assetClass,
+            itemStyle: {
+              color: getHeatColor(curRet),
+              borderColor: 'rgba(15, 23, 42, 0.5)',
+              borderWidth: 1.5
+            }
+          });
+        }
+
+        const treeData = [];
+        for (const [className, classObj] of Object.entries(classMap)) {
+          const typeChildren = [];
+          for (const [typeName, typeObj] of Object.entries(classObj.children)) {
+            typeObj.children.sort((a, b) => b.value - a.value);
+            typeChildren.push(typeObj);
+          }
+          typeChildren.sort((a, b) => {
+            const sumA = a.children.reduce((s, c) => s + c.value, 0);
+            const sumB = b.children.reduce((s, c) => s + c.value, 0);
+            return sumB - sumA;
+          });
+          treeData.push({
+            name: className,
+            children: typeChildren
+          });
+        }
+
+        return {
+          backgroundColor: 'transparent',
+          tooltip: {
+            backgroundColor: 'rgba(15, 23, 42, 0.95)',
+            borderColor: '#3b82f6',
+            borderWidth: 1,
+            padding: [10, 14],
+            textStyle: { color: '#f8fafc', fontSize: 12 },
+            formatter: function (info) {
+              const val = info.value;
+              if (!val) return `<div style="font-weight:700;">${info.name}</div>`;
+              const aumStr = formatAUM(val);
+              const data = info.data || {};
+              const rets = data.returns || {};
+
+              let retBadge = '';
+              if (data.currentRet !== null && data.currentRet !== undefined) {
+                const sign = data.currentRet > 0 ? '+' : '';
+                const color = data.currentRet >= 0 ? '#4ade80' : '#f87171';
+                retBadge = `<span style="font-size:13px; font-weight:700; color:${color}; margin-left:8px;">${sign}${data.currentRet.toFixed(2)}%</span>`;
+              }
+
+              let html = `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <span style="font-weight:700; font-size:15px; color:#60a5fa;">${info.name}</span>
+              ${retBadge}
+            </div>`;
+              if (data.fullName) {
+                html += `<div style="font-size:12px; color:#cbd5e1; margin-bottom:6px; max-width:280px; white-space:normal;">${data.fullName}</div>`;
+              }
+              if (data.assetClass && data.assetType) {
+                html += `<div style="font-size:11px; color:#94a3b8; margin-bottom:6px;">${data.assetClass} › ${data.assetType}</div>`;
+              }
+              if (data.provider) {
+                html += `<div style="font-size:11px; color:#cbd5e1;">운용사: <strong>${data.provider}</strong></div>`;
+              }
+              if (data.expenseRatio !== undefined) {
+                html += `<div style="font-size:11px; color:#cbd5e1;">운용보수: <strong>${(data.expenseRatio * 100).toFixed(2)}%</strong></div>`;
+              }
+              html += `<div style="font-size:12px; font-weight:700; color:#38bdf8; margin:6px 0 8px 0;">AUM: ${aumStr}</div>`;
+
+              // Returns Table
+              html += `<div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:6px; margin-top:4px;">
+              <div style="font-size:11px; font-weight:600; color:#94a3b8; margin-bottom:4px;">수익률 지표 (Performance):</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px; font-size:11px;">
+                <div>3M Real: <strong style="color:${(rets.real_3m || 0) >= 0 ? '#4ade80' : '#f87171'}">${(rets.real_3m || 0) > 0 ? '+' : ''}${(rets.real_3m || 0).toFixed(2)}%</strong></div>
+                <div>3M Nominal: <strong style="color:${(rets['3m'] || 0) >= 0 ? '#4ade80' : '#f87171'}">${(rets['3m'] || 0) > 0 ? '+' : ''}${(rets['3m'] || 0).toFixed(2)}%</strong></div>
+                <div>YTD: <strong style="color:${(rets.ytd || 0) >= 0 ? '#4ade80' : '#f87171'}">${(rets.ytd || 0) > 0 ? '+' : ''}${(rets.ytd || 0).toFixed(2)}%</strong></div>
+                <div>1Y: <strong style="color:${(rets['1y'] || 0) >= 0 ? '#4ade80' : '#f87171'}">${(rets['1y'] || 0) > 0 ? '+' : ''}${(rets['1y'] || 0).toFixed(2)}%</strong></div>
+                <div>1M: <strong style="color:${(rets['1m'] || 0) >= 0 ? '#4ade80' : '#f87171'}">${(rets['1m'] || 0) > 0 ? '+' : ''}${(rets['1m'] || 0).toFixed(2)}%</strong></div>
+              </div>
+            </div>`;
+              return html;
+            }
+          },
+          series: [
+            {
+              name: 'ETF Universe',
+              type: 'treemap',
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 26,
+              visibleMin: 200,
+              roam: false,
+              nodeClick: 'zoomToNode',
+              drillDownIcon: '▶',
+              breadcrumb: {
+                show: true,
+                top: 'bottom',
+                left: 10,
+                itemStyle: {
+                  color: 'rgba(59, 130, 246, 0.25)',
+                  borderColor: 'rgba(59, 130, 246, 0.5)',
+                  textStyle: { color: '#cbd5e1', fontSize: 11 }
+                }
+              },
+              levels: [
+                {
+                  itemStyle: {
+                    borderColor: '#0f172a',
+                    borderWidth: 2,
+                    gapWidth: 3
+                  },
+                  upperLabel: {
+                    show: false
+                  }
+                },
+                {
+                  colorSaturation: [0.35, 0.65],
+                  itemStyle: {
+                    borderColor: 'rgba(15, 23, 42, 0.85)',
+                    borderWidth: 2,
+                    gapWidth: 2
+                  },
+                  upperLabel: {
+                    show: true,
+                    height: 22,
+                    fontSize: 11,
+                    fontWeight: 'bold',
+                    color: '#ffffff'
+                  }
+                },
+                {
+                  colorSaturation: [0.3, 0.7],
+                  itemStyle: {
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    borderWidth: 1,
+                    gapWidth: 1
+                  },
+                  upperLabel: {
+                    show: true,
+                    height: 18,
+                    fontSize: 10,
+                    fontWeight: '600',
+                    color: 'rgba(255, 255, 255, 0.85)'
+                  }
+                },
+                {
+                  itemStyle: {
+                    borderColor: 'rgba(0, 0, 0, 0.25)',
+                    borderWidth: 1
+                  },
+                  label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: function (params) {
+                      const data = params.data || {};
+                      const valStr = formatAUM(params.value);
+                      const ret = data.currentRet;
+                      let retStr = '';
+                      if (ret !== undefined && ret !== null && !isNaN(ret)) {
+                        const sign = ret > 0 ? '+' : '';
+                        retStr = sign + ret.toFixed(2) + '%';
+                      }
+                      return '{sym|' + params.name + '}\n{val|' + valStr + '}\n{ret|' + retStr + '}';
+                    },
+                    rich: {
+                      sym: {
+                        fontSize: 12,
+                        fontWeight: 'bold',
+                        color: '#ffffff',
+                        align: 'center',
+                        lineHeight: 15
+                      },
+                      val: {
+                        fontSize: 10,
+                        color: 'rgba(255, 255, 255, 0.85)',
+                        align: 'center',
+                        lineHeight: 13
+                      },
+                      ret: {
+                        fontSize: 11,
+                        fontWeight: 'bold',
+                        color: '#ffffff',
+                        align: 'center',
+                        lineHeight: 14
+                      }
+                    }
+                  }
+                }
+              ],
+              data: treeData
+            }
+          ]
+        };
+      }
+
+      globalTreeDataBuilder = buildOption;
+
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      etfChartInstance = echarts.init(container, isDark ? 'dark' : null);
+      etfChartInstance.setOption(buildOption(currentHeatPeriod));
+
+      window.addEventListener('resize', function () {
+        if (etfChartInstance) etfChartInstance.resize();
+      });
+
+      const observer = new MutationObserver(function () {
+        const nextIsDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (etfChartInstance) {
+          etfChartInstance.dispose();
+          etfChartInstance = echarts.init(container, nextIsDark ? 'dark' : null);
+          etfChartInstance.setOption(buildOption(currentHeatPeriod));
+        }
+      });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    }
+
+    if (window.echarts) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTreemap);
+      } else {
+        initTreemap();
+      }
+    } else {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js';
+      s.onload = function () {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initTreemap);
+        } else {
+          initTreemap();
+        }
+      };
+      document.head.appendChild(s);
+    }
+  })();
+</script>

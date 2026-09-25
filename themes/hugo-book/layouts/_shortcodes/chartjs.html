@@ -1,0 +1,14 @@
+{{- .Page.Store.Set "has-chartjs" true -}}
+{{- $dataKey := .Get "data" | default "mock_2026" -}}
+{{- $subKey := .Get "key" | default "sales_bar" -}}
+{{- $title := .Get "title" | default "월별 매출 및 순이익 (Chart.js)" -}}
+{{- $type := .Get "type" | default "bar" -}}
+{{- $height := .Get "height" | default "360px" -}}
+{{- $raw := index hugo.Data $dataKey -}}
+{{- $chartData := index $raw $subKey | default $raw -}}
+{{- $config := dict "type" $type "title" $title "data" $chartData -}}
+
+<div class="chartjs-instance" style="position: relative; width: 100%; max-width: 800px; height: {{ $height }}; margin: 1.5rem auto; padding: 1rem; background: var(--theme-box-bg, rgba(255,255,255,0.05)); border: 1px solid rgba(128,128,128,0.2); border-radius: 8px;">
+  <canvas></canvas>
+  <script type="application/json">{{ $config | jsonify | safeJS }}</script>
+</div>

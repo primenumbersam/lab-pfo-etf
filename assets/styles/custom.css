@@ -1,0 +1,64 @@
+/* assets/styles/custom.css */
+
+/* 수동 Dark 선택 시 */
+:root[data-theme="dark"] {
+    --body-background: #121212;
+    /* 원하는 배경색 (예: 완전한 블랙, 딥 차콜 등) */
+}
+
+/* Auto(OS 다크 모드) 설정 시 */
+@media (prefers-color-scheme: dark) {
+    :root[data-theme="auto"] {
+        --body-background: #121212;
+    }
+}
+
+/* Code block copy button */
+.highlight {
+  position: relative;
+}
+
+.copy-code-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--body-font-color);
+  background: var(--gray-200);
+  border: 1px solid var(--gray-500);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, background 0.15s;
+  z-index: 10;
+}
+
+.highlight:hover .copy-code-btn {
+  opacity: 0.85;
+}
+
+.copy-code-btn:hover {
+  opacity: 1;
+}
+
+/* Notion-style Callout Box (<aside>) */
+article.markdown aside {
+  margin: var(--space-16) 0;
+  padding: var(--space-12) var(--space-16);
+  background-color: var(--gray-100);
+  border: var(--space-1) solid var(--gray-200);
+  border-inline-start: var(--space-4) solid var(--color-link);
+  border-radius: var(--border-radius);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+article.markdown aside > :first-child {
+  margin-top: 0;
+}
+
+article.markdown aside > :last-child {
+  margin-bottom: 0;
+}

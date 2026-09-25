@@ -1,0 +1,151 @@
+{{- $etfMap := hugo.Data.etfs -}}
+{{- $etfs := slice -}}
+{{- $typesMap := dict -}}
+{{- range $k, $v := $etfMap -}}
+  {{- $etfs = $etfs | append $v -}}
+  {{- if $v.asset_type -}}
+    {{- $typesMap = merge $typesMap (dict $v.asset_type true) -}}
+  {{- end -}}
+{{- end -}}
+{{- $etfs = sort $etfs "aum" "desc" -}}
+{{- $totalEtfs := len $etfs -}}
+{{- $totalTypes := len $typesMap -}}
+
+<div style="margin: 1.5rem 0; overflow-x: auto;">
+  <table id="etf-universe-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+    <thead>
+      <tr style="border-bottom: 2px solid var(--theme-border, #4c566a); text-align: left;">
+        <th class="sortable-th" data-type="text" style="padding: 0.6rem 0.75rem;">
+          Ticker <span class="sort-icon">↕</span>
+        </th>
+        <th class="sortable-th" data-type="text" style="padding: 0.6rem 0.75rem;">
+          ETF Name ({{ $totalEtfs }}개) <span class="sort-icon">↕</span>
+        </th>
+        <th class="sortable-th" data-type="text" style="padding: 0.6rem 0.75rem;">
+          Index <span class="sort-icon">↕</span>
+        </th>
+        <th class="sortable-th" data-type="text" style="padding: 0.6rem 0.75rem;">
+          Inception Date <span class="sort-icon">↕</span>
+        </th>
+        <th class="sortable-th" data-type="number" style="padding: 0.6rem 0.75rem;">
+          Expense Ratio <span class="sort-icon">↕</span>
+        </th>
+        <th class="sortable-th sorted desc" data-type="number" style="padding: 0.6rem 0.75rem;">
+          AUM (USD) <span class="sort-icon">▼</span>
+        </th>
+        <th class="sortable-th" data-type="text" style="padding: 0.6rem 0.75rem;">
+          Asset Class <span class="sort-icon">↕</span>
+        </th>
+        <th class="sortable-th" data-type="text" style="padding: 0.6rem 0.75rem;">
+          Asset Type ({{ $totalTypes }}개) <span class="sort-icon">↕</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{- range $etfs -}}
+        {{- $aumFmt := "" -}}
+        {{- if ge .aum 1000000000000 -}}
+          {{- $aumFmt = printf "$%.2fT" (div (float .aum) 1000000000000.0) -}}
+        {{- else if ge .aum 1000000000 -}}
+          {{- $aumFmt = printf "$%.1fB" (div (float .aum) 1000000000.0) -}}
+        {{- else if ge .aum 1000000 -}}
+          {{- $aumFmt = printf "$%.1fM" (div (float .aum) 1000000.0) -}}
+        {{- else -}}
+          {{- $aumFmt = printf "$%d" .aum -}}
+        {{- end -}}
+        <tr style="border-bottom: 1px solid rgba(128,128,128,0.2);">
+          <td data-value="{{ .symbol }}" style="padding: 0.6rem 0.75rem; font-weight: 600; color: #3b82f6;">{{ .symbol }}</td>
+          <td data-value="{{ .name }}" style="padding: 0.6rem 0.75rem;">{{ .name }}</td>
+          <td data-value="{{ .index }}" style="padding: 0.6rem 0.75rem; color: #888;">{{ .index }}</td>
+          <td data-value="{{ .inception_date }}" style="padding: 0.6rem 0.75rem; white-space: nowrap;">{{ .inception_date }}</td>
+          <td data-value="{{ .expense_ratio }}" style="padding: 0.6rem 0.75rem;">{{ printf "%.2f%%" (mul .expense_ratio 100) }}</td>
+          <td data-value="{{ .aum }}" style="padding: 0.6rem 0.75rem;">{{ $aumFmt }}</td>
+          <td data-value="{{ .asset_class }}" style="padding: 0.6rem 0.75rem;">{{ .asset_class }}</td>
+          <td data-value="{{ .asset_type }}" style="padding: 0.6rem 0.75rem;">{{ .asset_type }}</td>
+        </tr>
+      {{- end -}}
+    </tbody>
+  </table>
+</div>
+
+<style>
+.sortable-th {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+.sortable-th:hover {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.08);
+}
+.sortable-th .sort-icon {
+  font-size: 0.75rem;
+  color: #888;
+  margin-left: 0.35rem;
+  display: inline-block;
+  opacity: 0.6;
+}
+.sortable-th.sorted {
+  color: #3b82f6;
+}
+.sortable-th.sorted .sort-icon {
+  color: #3b82f6;
+  opacity: 1;
+}
+#etf-universe-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+</style>
+
+<script>
+(function() {
+  const table = document.getElementById('etf-universe-table');
+  if (!table) return;
+  const thead = table.querySelector('thead');
+  const tbody = table.querySelector('tbody');
+  const ths = thead.querySelectorAll('th.sortable-th');
+
+  ths.forEach((th, colIdx) => {
+    th.addEventListener('click', () => {
+      const isNumber = th.dataset.type === 'number';
+      const isCurrentlyAsc = th.classList.contains('asc');
+      const newOrder = isCurrentlyAsc ? 'desc' : 'asc';
+
+      ths.forEach(otherTh => {
+        otherTh.classList.remove('sorted', 'asc', 'desc');
+        const icon = otherTh.querySelector('.sort-icon');
+        if (icon) icon.textContent = '↕';
+      });
+
+      th.classList.add('sorted', newOrder);
+      const icon = th.querySelector('.sort-icon');
+      if (icon) icon.textContent = newOrder === 'asc' ? '▲' : '▼';
+
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort((rowA, rowB) => {
+        const cellA = rowA.children[colIdx];
+        const cellB = rowB.children[colIdx];
+
+        let valA = cellA.getAttribute('data-value');
+        if (valA === null) valA = cellA.innerText.trim();
+        let valB = cellB.getAttribute('data-value');
+        if (valB === null) valB = cellB.innerText.trim();
+
+        let cmp = 0;
+        if (isNumber) {
+          const numA = parseFloat(valA) || 0;
+          const numB = parseFloat(valB) || 0;
+          cmp = numA - numB;
+        } else {
+          cmp = valA.localeCompare(valB, undefined, { sensitivity: 'base' });
+        }
+
+        return newOrder === 'asc' ? cmp : -cmp;
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
+    });
+  });
+})();
+</script>
