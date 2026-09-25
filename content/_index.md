@@ -4,10 +4,13 @@ title: "US ETF Portfolio Score"
 
 # US ETF Portfolios' Annual Score
 
-US ETFs를 이용한 21개의 자산배분 전략을 4개의 계량 평가 기준으로 종합 평가해 보는 대화형 순위 현황판. 
-(ETF proxy for each Asset Class 는 연말 연간 업데이트)
+US ETFs를 이용한 21개의 자산배분 전략을 4개의 계량 평가 기준으로 종합 평가해 보는 대화형 순위 현황판.
 
-![US ETF Portfolios](images/frame.jpg)
+<video controls preload="metadata" playsinline poster="images/video-frame.jpg" style="width: 100%; max-width: 820px; border-radius: 8px; margin: 1rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block;">
+  <source src="video.mp4" type="video/mp4">
+  브라우저가 HTML5 비디오 재생을 지원하지 않는다.
+</video>
+
 
 <style>
 .metric-weights-panel {
@@ -116,7 +119,6 @@ US ETFs를 이용한 21개의 자산배분 전략을 4개의 계량 평가 기�
 ## Metric Weights (Interactive)
 
 평가지표 가중치를 변경하면 실시간으로 21개 ETF Portfolio Strategies의 종합 점수와 순위가 계산됨.
-(실질복리수익률 = 10 year Rolling Window 15th percentile)
 
 <div class="metric-weights-panel">
   <div class="weight-control">
@@ -140,6 +142,8 @@ US ETFs를 이용한 21개의 자산배분 전략을 4개의 계량 평가 기�
 ---
 
 ## ETF Portfolio Rankings by Weighted Metric
+
+(Real Rate = CPI adjusted 10 year Rolling Window 15th percentile)
 
 <div class="cat-btn-group">
   <button class="cat-btn active" data-cat="all" onclick="setCategoryFilter('all')">All (21)</button>
